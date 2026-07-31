@@ -2,18 +2,39 @@
 
 # Corbit endpoint CORS setup
 
-> Read this when Corbit says "This endpoint doesn't allow browser requests (CORS)".
+> Read this to understand what happens when Corbit can't reach an endpoint directly.
 
-Corbit talks to the OpenAI-compatible endpoint you configure **straight from the browser**: the request and your API key go to that endpoint directly, never through a ChainCore Kit server. That is also why your key never reaches a third party.
+**Usually you don't have to do anything.** If an endpoint blocks browser requests, Corbit switches to the secure relay and resends automatically — you just see it reply, with a small "via secure relay" note under the composer. This page explains what's happening behind that, and what your alternatives are if you'd rather not use the relay.
 
-The trade-off is the browser's same-origin policy — the endpoint has to state in its response that this page is allowed to call it, otherwise the browser blocks the request. Only the endpoint side can do that; the app cannot do it for you.
+By default Corbit talks to your OpenAI-compatible endpoint **straight from the browser**: the request and your API key go there directly, never through a middleman. OpenAI, DeepSeek, Moonshot and Alibaba's DashScope all work this way.
 
-Start by working out which case you're in:
+But the browser's same-origin policy requires the endpoint to declare, in its response, that this page may call it. Only the endpoint can make that declaration — no amount of frontend code can work around it.
 
-| Case                                                        | What to do                    | Anything to deploy? |
-| ----------------------------------------------------------- | ----------------------------- | ------------------- |
-| You run the endpoint, or can change its config               | Option A: add CORS headers    | No                  |
-| It's a third-party relay whose responses you can't change    | Option B: run your own relay  | Yes (a small one)   |
+Three routes:
+
+| Case                                                   | What to do                          | Anything to deploy? |
+| ------------------------------------------------------ | ----------------------------------- | ------------------- |
+| Default                                                | Option O: nothing, it's automatic   | No                  |
+| You run the endpoint, or can change its config          | Option A: add CORS headers          | No                  |
+| You'd rather your key never touched a third party       | Option B: run your own relay        | Yes (a small one)   |
+
+---
+
+## Option O: automatic secure relay (the default)
+
+Nothing to do. Corbit tries direct first; if the browser blocks it, the same request is resent through ChainCore Kit's relay (a Cloudflare Worker). **Server-to-server requests aren't subject to the browser's same-origin policy**, so it gets through.
+
+The only thing you'll notice is a "via secure relay" note under the composer.
+
+The privacy trade-off — which is exactly why that note is there:
+
+- When relayed, your API key passes through the relay. It is used **for that one request — never stored, never logged**; request-log sampling on the relay is explicitly disabled.
+- The relay is **not always on**: it's only reached after a direct attempt fails, and the choice lasts **for that session only and is never written to disk**. Switch to an endpoint that allows browser requests and you're back to direct.
+- Endpoints that do work directly (OpenAI, DeepSeek, Moonshot, DashScope…) are **never** relayed — your key touches no server.
+- The relay only handles Corbit's two AI routes, and only accepts public HTTPS endpoints.
+- Wallet, mnemonic and private-key features are **always fully local** and are not affected by any of this.
+
+If you'd rather your key never passed through a third party — or your endpoint is internal or on a non-standard port (the relay only accepts 443) — use Option A or B below.
 
 ---
 
