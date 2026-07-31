@@ -89,6 +89,7 @@ or sent off your device.**
 
 ## Related
 
+- [Corbit endpoint CORS setup](./ai/corbit-cors.md)
 - [Security model](./security.md)
 - [FAQ](./faq.md)
 - [Glossary](./glossary.md)

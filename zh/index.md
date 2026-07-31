@@ -81,6 +81,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 
 ## 相关文档
 
+- [Corbit 端点跨域（CORS）配置](./ai/corbit-cors.md)
 - [安全模型](./security.md)
 - [常见问题 FAQ](./faq.md)
 - [术语表](./glossary.md)
