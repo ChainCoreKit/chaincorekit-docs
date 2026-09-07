@@ -43,6 +43,7 @@ or sent off your device.**
 | [Signature Verifier](./evm/sig-verify.md) | Hash and verify EIP-191 messages and EIP-712 typed data |
 | [RPC Diagnostics](./evm/rpc-check.md) | Check endpoint reachability, chainId, block height, latency and read capabilities |
 | [Contract Inspector](./evm/contract-check.md) | Bytecode, proxy implementation, admin slot and EIP-7702 delegation |
+| [Token Approvals](./evm/approvals.md) | Check and revoke allowances for the token / spender pairs you specify |
 | [Token Issuance](./evm/token-issuance.md) | Deploy an ERC-20 token |
 
 ### Bitcoin
