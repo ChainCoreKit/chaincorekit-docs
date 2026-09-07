@@ -75,6 +75,7 @@ or sent off your device.**
 | [Instruction Codec](./solana/sol-instruction.md) | Encode / decode instruction data |
 | [Program IDL](./solana/sol-idl.md) | Browse an Anchor IDL |
 | [Compute / Fee / Rent](./solana/sol-fee-rent.md) | Estimate compute units, fees, rent |
+| [Token Inspector](./solana/sol-token-inspector.md) | Mint supply, decimals, authorities, Token-2022 extensions |
 
 ### Polkadot
 
