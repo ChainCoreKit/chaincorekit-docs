@@ -38,6 +38,7 @@ or sent off your device.**
 | [Event TopicID](./evm/topic-id.md) | Compute an event signature's TopicID |
 | [Hash Tools](./evm/hash-tool.md) | keccak-256 and related hashing |
 | [Calldata Codec](./evm/calldata.md) | Encode / decode transaction calldata |
+| [ABI Codec](./evm/abi-codec.md) | Encode constructor args; decode event logs and revert errors |
 | [Token Issuance](./evm/token-issuance.md) | Deploy an ERC-20 token |
 
 ### Bitcoin
