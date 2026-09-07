@@ -31,6 +31,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [Hash 工具](./evm/hash-tool.md) | keccak-256 等哈希计算 |
 | [Calldata 编解码](./evm/calldata.md) | 编码/解码交易 Calldata |
 | [ABI 编解码](./evm/abi-codec.md) | 构造函数参数编码、事件日志与 revert 错误解码 |
+| [交易数据解码](./evm/tx-decode.md) | 原始已签名交易与 RLP 解码，支持到 EIP-4844 / 7702 |
 | [Token 发行](./evm/token-issuance.md) | 部署 ERC-20 代币 |
 
 ### Bitcoin 工具

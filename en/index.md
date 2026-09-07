@@ -39,6 +39,7 @@ or sent off your device.**
 | [Hash Tools](./evm/hash-tool.md) | keccak-256 and related hashing |
 | [Calldata Codec](./evm/calldata.md) | Encode / decode transaction calldata |
 | [ABI Codec](./evm/abi-codec.md) | Encode constructor args; decode event logs and revert errors |
+| [Transaction Decoder](./evm/tx-decode.md) | Decode raw signed transactions and RLP, up to EIP-4844 / 7702 |
 | [Token Issuance](./evm/token-issuance.md) | Deploy an ERC-20 token |
 
 ### Bitcoin
