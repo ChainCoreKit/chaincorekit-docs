@@ -38,6 +38,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [授权管理](./evm/approvals.md) | 查询指定 Token / spender 的授权额度并撤销 |
 | [地址预测与 Merkle](./evm/create2-merkle.md) | CREATE / CREATE2 地址预测与空投白名单 Merkle 树 |
 | [多链助记词派生](./evm/multichain-derive.md) | 一条助记词看 EVM / BTC / Solana / Aptos / Sui / TON 的地址 |
+| [批量合约读取](./evm/batch-read.md) | 多个合约各查各的只读函数，钉在同一区块 |
 | [Token 发行](./evm/token-issuance.md) | 部署 ERC-20 代币 |
 
 ### Bitcoin 工具

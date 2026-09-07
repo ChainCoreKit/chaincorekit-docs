@@ -46,6 +46,7 @@ or sent off your device.**
 | [Token Approvals](./evm/approvals.md) | Check and revoke allowances for the token / spender pairs you specify |
 | [Address Prediction & Merkle](./evm/create2-merkle.md) | Predict CREATE / CREATE2 addresses and build airdrop Merkle trees |
 | [Multi-chain Derivation](./evm/multichain-derive.md) | See EVM / BTC / Solana / Aptos / Sui / TON addresses from one mnemonic |
+| [Batch Contract Read](./evm/batch-read.md) | Different read-only calls across many contracts, pinned to one block |
 | [Token Issuance](./evm/token-issuance.md) | Deploy an ERC-20 token |
 
 ### Bitcoin
