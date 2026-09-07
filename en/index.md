@@ -41,6 +41,7 @@ or sent off your device.**
 | [ABI Codec](./evm/abi-codec.md) | Encode constructor args; decode event logs and revert errors |
 | [Transaction Decoder](./evm/tx-decode.md) | Decode raw signed transactions and RLP, up to EIP-4844 / 7702 |
 | [Signature Verifier](./evm/sig-verify.md) | Hash and verify EIP-191 messages and EIP-712 typed data |
+| [RPC Diagnostics](./evm/rpc-check.md) | Check endpoint reachability, chainId, block height, latency and read capabilities |
 | [Token Issuance](./evm/token-issuance.md) | Deploy an ERC-20 token |
 
 ### Bitcoin

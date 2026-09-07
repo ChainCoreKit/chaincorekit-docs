@@ -33,6 +33,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [ABI 编解码](./evm/abi-codec.md) | 构造函数参数编码、事件日志与 revert 错误解码 |
 | [交易数据解码](./evm/tx-decode.md) | 原始已签名交易与 RLP 解码，支持到 EIP-4844 / 7702 |
 | [签名验证](./evm/sig-verify.md) | EIP-191 消息与 EIP-712 结构化数据的哈希与验签 |
+| [RPC 诊断](./evm/rpc-check.md) | 检查端点连通、chainId、区块高度、响应时间与只读能力 |
 | [Token 发行](./evm/token-issuance.md) | 部署 ERC-20 代币 |
 
 ### Bitcoin 工具
