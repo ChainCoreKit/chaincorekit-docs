@@ -42,6 +42,7 @@ or sent off your device.**
 | [Transaction Decoder](./evm/tx-decode.md) | Decode raw signed transactions and RLP, up to EIP-4844 / 7702 |
 | [Signature Verifier](./evm/sig-verify.md) | Hash and verify EIP-191 messages and EIP-712 typed data |
 | [RPC Diagnostics](./evm/rpc-check.md) | Check endpoint reachability, chainId, block height, latency and read capabilities |
+| [Contract Inspector](./evm/contract-check.md) | Bytecode, proxy implementation, admin slot and EIP-7702 delegation |
 | [Token Issuance](./evm/token-issuance.md) | Deploy an ERC-20 token |
 
 ### Bitcoin
