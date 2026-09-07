@@ -2,9 +2,10 @@
 
 # Generate BTC Wallet · BTC
 
-> Generate Bitcoin wallets locally in bulk across four address types — Legacy,
-> Nested SegWit, Native SegWit, and Taproot — or import existing WIF keys. Keys
-> never leave your device.
+> Generate Bitcoin wallets locally in bulk: one BIP39 mnemonic derives many
+> addresses along the BIP path for the chosen address type — Legacy, Nested
+> SegWit, Native SegWit, or Taproot — or import existing WIF keys. Keys never
+> leave your device.
 
 ## When to use it
 
@@ -21,9 +22,11 @@
 ### Option A — Random bulk generation
 
 1. Choose a **generation mode**:
-   - **Bulk generate addresses**: create many addresses at once; each holds its own
-     independent WIF key.
-   - **Independent keys**: likewise one independent key per address, all unrelated.
+   - **Derive from one mnemonic**: one BIP39 mnemonic derives consecutive
+     addresses along the path for the chosen type. Back up **that single
+     mnemonic** to restore every address.
+   - **Independent mnemonics**: each wallet gets its own mnemonic and key, all
+     unrelated — back up **every mnemonic separately**.
 2. Choose the **address type**:
    - **Native SegWit (`bc1q…`)**: today's mainstream format — low fees, broad
      compatibility. Pick this if unsure.
@@ -31,15 +34,19 @@
    - **Nested SegWit (`3…`)**: a transitional format compatible with older wallets.
    - **Legacy (`1…`)**: the oldest format — widest compatibility but higher fees.
 3. Set the **count** (≤ 100).
-4. (Optional) Expand **Advanced · derivation path** to set `account` and the
-   starting `index`. The prefix follows the address type: Legacy `m/44'`, Nested
-   SegWit `m/49'`, Native SegWit `m/84'`, Taproot `m/86'`.
+4. (Optional) Expand **Advanced · derivation path** to set `account`, the
+   starting `index`, and an optional BIP39 passphrase. The prefix follows the
+   address type: Legacy `m/44'` (BIP44), Nested SegWit `m/49'` (BIP49), Native
+   SegWit `m/84'` (BIP84), Taproot `m/86'` (BIP86).
+   All four are **real BIP32 derivations** — including BIP86 for Taproot — so the
+   same mnemonic restores identical addresses in any compatible wallet.
 5. Click **Generate**. The results table lists address and private key (masked by
    default).
 
-> The path shown here is a **BIP structural illustration** only — not a real
-> derivation and not a recovery credential. Each address's recovery credential is
-> its own **WIF key**; back them up individually.
+> **The mnemonic is the recovery credential.** In the derive-from-one-mnemonic
+> mode, writing down that single mnemonic (plus any passphrase you set) restores
+> every address in any compatible wallet. WIF keys can be backed up separately,
+> but leaking one only affects that single address.
 
 ### Option B — Import a private key
 
@@ -50,23 +57,31 @@
 > Only **WIF keys** are accepted for import; HD options ("count", "derivation
 > path") are unavailable afterward.
 
+> **BIP39 passphrase (optional)** — also known as the 25th word. Leaving it empty
+> matches standard derivation. Once set, the same mnemonic derives a **completely
+> different and unrelated** set of wallets. A typo fails silently — you simply get
+> other addresses. Store it **separately** from the mnemonic; without it the
+> mnemonic alone cannot recover your funds.
+
 ## Inputs / outputs
 
 | Field | Meaning / format |
 | --- | --- |
-| Generation mode | `Bulk generate addresses` / `Independent keys` |
+| Generation mode | `Derive from one mnemonic` / `Independent mnemonics` |
 | Address type | Native SegWit (bc1q) / Taproot (bc1p) / Nested SegWit (3) / Legacy (1) |
 | Count | 1–100 |
-| Account | the `account'` path segment, default 0 (illustration only) |
-| Start index | the path's last-segment start, default 0 (illustration only) |
+| Account | the `account'` path segment, default 0 |
+| Start index | the path's last-segment start, default 0 |
+| BIP39 passphrase | optional. Empty means standard derivation; setting one gives a different set of wallets and must be stored separately from the mnemonic |
 | Import | WIF private keys, one per line |
 | Output | address, WIF key; copy, export (address-only / with keys), multi-select |
 
 ## Notes & gotchas
 
 - **Max 100** addresses per run.
-- **Path is illustrative only**: each address stands alone; recovery relies on its
-  own WIF key, not on the path.
+- **A passphrase is part of the seed**: a different passphrase gives you a
+  completely different set of wallets, and a typo fails silently — you just get
+  other addresses. Lose it and the mnemonic alone cannot recover your funds.
 - **Import accepts WIF only**; other formats aren't handled.
 - Results are **lost on leave/refresh** — export or write them down first.
 - On mainnet, confirm the address type before receiving real funds — a wrong

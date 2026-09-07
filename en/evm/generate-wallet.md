@@ -28,8 +28,9 @@
    entropy).
 3. Set the **count** (≤ 100). In HD mode this is how many addresses are derived
    consecutively along the path.
-4. (Optional) Expand **Advanced · derivation path** to set `account` and the
-   starting `index`. The path follows BIP44: `m / 44' / 60' / account' / 0 / index`.
+4. (Optional) Expand **Advanced · derivation path** to set `account`, the
+   starting `index`, and an optional BIP39 passphrase. The path follows BIP44:
+   `m / 44' / 60' / account' / 0 / index`.
 5. Click **Generate**. The results table lists address, private key, and mnemonic
    (masked by default).
 
@@ -41,6 +42,12 @@
 
 > When importing by private key, the HD options ("count", "derivation path") are
 > unavailable — a raw key carries no derivation info.
+
+> **BIP39 passphrase (optional)** — also known as the 25th word. Leaving it empty
+> matches standard derivation. Once set, the same mnemonic derives a **completely
+> different and unrelated** set of wallets. A typo fails silently — you simply get
+> other addresses. Store it **separately** from the mnemonic; without it the
+> mnemonic alone cannot recover your funds.
 
 ## Inputs / outputs
 
