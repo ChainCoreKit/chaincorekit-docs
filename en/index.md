@@ -45,6 +45,7 @@ or sent off your device.**
 | [Contract Inspector](./evm/contract-check.md) | Bytecode, proxy implementation, admin slot and EIP-7702 delegation |
 | [Token Approvals](./evm/approvals.md) | Check and revoke allowances for the token / spender pairs you specify |
 | [Address Prediction & Merkle](./evm/create2-merkle.md) | Predict CREATE / CREATE2 addresses and build airdrop Merkle trees |
+| [Multi-chain Derivation](./evm/multichain-derive.md) | See EVM / BTC / Solana / Aptos / Sui / TON addresses from one mnemonic |
 | [Token Issuance](./evm/token-issuance.md) | Deploy an ERC-20 token |
 
 ### Bitcoin
