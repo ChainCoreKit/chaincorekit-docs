@@ -76,6 +76,7 @@ or sent off your device.**
 | [Program IDL](./solana/sol-idl.md) | Browse an Anchor IDL |
 | [Compute / Fee / Rent](./solana/sol-fee-rent.md) | Estimate compute units, fees, rent |
 | [Token Inspector](./solana/sol-token-inspector.md) | Mint supply, decimals, authorities, Token-2022 extensions |
+| [Transaction Decoder](./solana/sol-tx-decode.md) | Decode signatures, accounts, instructions and lookup tables |
 
 ### Polkadot
 
