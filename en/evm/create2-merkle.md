@@ -34,6 +34,32 @@ address matches.
 > Being able to compute the address doesn't mean deployment will succeed on that chain — the
 > factory has to exist, and the salt must not already be used.
 
+## Salt miner
+
+To get a contract address with a chosen prefix or suffix (say `0x0000…`), enter the factory
+address and initCode here, give the hex pattern you want, and the browser tries salts locally.
+
+**A salt is nothing like a vanity wallet.** Vanity search looks for a private key — finding one
+means holding the assets. A salt is a public deployment parameter: anyone with the same factory
+and initCode can recompute the exact same result. Mining a nice-looking salt involves no secret
+at all, which is why the search starts from 0 and needs no secure randomness.
+
+**Difficulty: each extra hex character multiplies the expected attempts by 16.**
+
+| Total pattern length | Expected attempts |
+| --- | --- |
+| 4 chars | ~65 thousand |
+| 5 chars | ~1.05 million |
+| 6 chars | ~16.8 million |
+| 8 chars | ~4.3 billion |
+
+4–5 characters are practical in a browser, 6 takes a while, and beyond that you want a GPU tool.
+The page shows the expected attempt count and the live rate up front so you can decide whether
+it's worth the wait.
+
+You can **stop** at any point, and leaving the page stops the search automatically (otherwise it
+would keep burning CPU in the background) — you'll need to restart when you come back.
+
 ## Merkle allowlist
 
 ### The leaf encoding must be chosen explicitly
