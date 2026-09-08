@@ -32,6 +32,12 @@
 | ERC-721 approved for all | `Approved for all (setApprovalForAll)` (in red) |
 | Read failed | Explicitly marked as failed — never shown as 0 |
 
+## Handoff from Disperse
+
+After approving a token on the Disperse page, a "Review or revoke this approval" link appears there; following it pre-fills the token and the spender (the Disperse contract). Approvals granted for a dispersal are easy to forget about afterwards, which is exactly what this path is for.
+
+If the parameters are malformed they are **ignored entirely — never partially applied**. A half-filled form reads as "already correct" and invites you to check the wrong spender.
+
 ## Notes & gotchas
 
 - **This tool does not discover approvals.** The most important point: plain RPC has no
