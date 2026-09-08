@@ -32,6 +32,33 @@
 Coverage: EIP-1967 (implementation / beacon / admin), EIP-1822 (UUPS), the OpenZeppelin
 legacy slot, and the EIP-7702 delegation marker.
 
+## ERC-165 interface probing
+
+After the check runs, the page also probes which standard interfaces the contract supports (ERC-721, ERC-1155, ERC-2981, …).
+
+Detection follows **the procedure EIP-165 defines for itself**: `supportsInterface(0x01ffc9a7)` must return true **and** `supportsInterface(0xffffffff)` must return false. The second step is not optional — a contract that returns true for any input would pass the first step alone and be reported as supporting every interface, making every subsequent probe a lie. Such contracts are reported here as not implementing ERC-165.
+
+The three outcomes mean different things:
+
+| Outcome | Meaning |
+| --- | --- |
+| Implements ERC-165 | Passed both steps; the interfaces listed below are trustworthy |
+| Does not implement ERC-165 | Confirmed non-conforming. **This says nothing about the contract being sound** — it simply has no self-describing interface mechanism |
+| Could not probe | The call failed or returned a non-standard value. **It does not mean no interfaces are supported**, only that this route can't tell |
+
+The known-interface list is limited, so "implements ERC-165 but matched nothing" is a normal result too.
+
+## Interface ID calculator
+
+Below the check is a purely local calculator: enter function signatures (one per line) and get the interface ID. No address, no RPC.
+
+Two rules that are easy to get wrong:
+
+- **It's the XOR of every function selector**, not a hash of the concatenation. Get it wrong and you still get a well-formed `bytes4` — it just returns `false` from `supportsInterface`, with nothing to hint that your own math was off.
+- **Functions only, never events, and inherited functions are not included.** The `ERC721Metadata` ID comes from just the three functions it adds — `name()` / `symbol()` / `tokenURI(uint256)` — not the nine it inherits from `ERC721`.
+
+A malformed signature is reported with its **line number**. A result of `0x00000000` prompts you to check for duplicates, since XOR cancels repeated entries out.
+
 ## Notes & gotchas
 
 - **"No known proxy pattern detected" is not "not a proxy".** This is the most important
