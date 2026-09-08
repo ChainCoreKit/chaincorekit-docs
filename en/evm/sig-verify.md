@@ -38,6 +38,23 @@
 | Typed data | Standard EIP-712 JSON; when `EIP712Domain` is omitted it is inferred from the fields present in `domain` |
 | Digest | The final 32 bytes the wallet actually signs |
 
+## Contract wallets (ERC-1271)
+
+A "signature" from a contract wallet such as Safe is not a secp256k1 signature, so **the address recovered locally will never match the wallet address**. Local-only verification hands you a confident "verification failed" that is simply wrong.
+
+Fill in the expected address (the contract wallet) and the signature, pick a network, and hit "Verify on-chain". The tool calls that contract's `isValidSignature(bytes32,bytes)` and compares the result against the magic value `0x1626ba7e`.
+
+The four outcomes mean different things:
+
+| Outcome | Meaning |
+| --- | --- |
+| Valid | The contract returned the magic value |
+| Invalid | The contract returned something else — the signature does not count for that contract |
+| Does not implement ERC-1271 | The call reverted or returned nothing. **This is not the same as invalid** — most likely the contract simply doesn't implement the interface |
+| It's an EOA | No code at the address, so ERC-1271 does not apply and the local comparison is the answer |
+
+**The result only holds for the block that was queried.** A contract wallet's signature validity changes over time — swap an owner or change the threshold and the same signature stops being valid. That is the fundamental difference from an EOA.
+
 ## Notes & gotchas
 
 - **This verifies EOA signatures.** Contract wallets such as Safe use ERC-1271 and can only
