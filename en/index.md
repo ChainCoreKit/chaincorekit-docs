@@ -100,6 +100,7 @@ or sent off your device.**
 
 ## Related
 
+- [Corbit AI assistant](./ai/corbit.md)
 - [Corbit endpoint CORS setup](./ai/corbit-cors.md)
 - [Security model](./security.md)
 - [FAQ](./faq.md)
