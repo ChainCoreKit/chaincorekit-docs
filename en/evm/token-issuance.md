@@ -61,6 +61,15 @@
   the smallest unit; don't read raw values as human-readable amounts.
 - **Verify before importing** — confirm the address and network, and check whether
   the contract is verified on the explorer before any write.
+- **Three kinds of deploy failure, handled differently** — the result dialog names
+  which one it was:
+  - **Rejected in the wallet** — nothing was sent, no gas spent; fix and retry.
+  - **Send failed** (insufficient funds, RPC error…) — also never reached the
+    chain; act on the stated reason.
+  - **Reverted · constructor execution failed** — the transaction **did reach the
+    chain and did cost gas**, but the constructor reverted, so there is no code at
+    that address. A contract address in the receipt does not count; fix the
+    constructor arguments and deploy again.
 - High-risk writes ask for a second confirmation — read the dialog carefully.
 
 ## Related tools
