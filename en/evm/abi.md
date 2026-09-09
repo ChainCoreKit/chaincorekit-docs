@@ -54,8 +54,15 @@
   `bytes/bytes32` need `0x`-prefixed hex.
 - **Unverified contracts**: if the ABI source isn't trustworthy, be cautious —
   don't blindly trust a third-party ABI.
-- High-risk writes (`transferOwnership`, `selfdestruct`, `upgrade`) warrant extra
-  care and usually a second confirmation.
+- **Overloaded functions** (e.g. ERC-721's two `safeTransferFrom`, 3-arg and
+  4-arg) each get their own card. Expanding, filling and sending one never
+  affects the other — the transaction is encoded for the overload whose card you
+  opened.
+- High-risk writes get an inline warning when expanded and an extra tick-box
+  before sending: `transferOwnership`, `renounceOwnership`, `selfdestruct`,
+  `upgrade`, and **`setApprovalForAll`** — the last one hands over every token in
+  an NFT collection in a single call, after which the operator can move them at
+  any time without you seeing another confirmation.
 
 ## Related tools
 

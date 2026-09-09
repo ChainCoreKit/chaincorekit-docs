@@ -63,7 +63,14 @@
 - **Derivation URI**: blank with count > 1 derives by index `//0` `//1` …; a URI
   derives a single account (sr25519 soft derivation coming soon).
 - **The SS58 prefix only affects the address text**: the underlying AccountId is
-  unchanged; a new prefix isn't a new account.
+  unchanged; a new prefix isn't a new account. Switching the prefix **re-encodes
+  the rows you already generated** in place — the addresses change, the AccountId
+  doesn't, and the explorer links follow to the matching chain. No need to
+  regenerate.
+- **Switching the key type does not clear existing results**: it is a different
+  key set, so regenerate before using the new type. Results aren't cleared
+  automatically because a mnemonic can't be recovered once the page is left —
+  brushing a dropdown shouldn't destroy it.
 - Results are **lost on leave/refresh** — export or write them down first.
 
 ## Security

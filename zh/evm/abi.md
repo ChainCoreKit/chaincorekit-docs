@@ -43,7 +43,12 @@
 - **金额精度**：uint256 金额按代币 `decimals` 换算（USDC=6，多数 ERC-20=18），别把原始 Wei 数当成人类可读数值。
 - **参数类型**：`uint` 等价 `uint256`、`int` 等价 `int256`、`byte` 等价 `bytes1`；`bytes/bytes32` 需 `0x` 前缀 hex。
 - **合约未在区块浏览器验证**时，ABI 来源不可信要留意风险，别盲目相信第三方给的 ABI。
-- 高危写函数（`transferOwnership`、`selfdestruct`、`upgrade`）应格外谨慎，通常需二次确认。
+- **同名重载函数**（如 ERC-721 的两个 `safeTransferFrom`：三参与四参）会各自显示成一张卡片，
+  展开、填参、发送互不影响；发送时按你点开的那一张的参数类型编码，不会串到另一个重载上。
+- 高危写函数需格外谨慎，展开时会内联提示风险，发送前还要勾选确认：
+  `transferOwnership`、`renounceOwnership`、`selfdestruct`、`upgrade`，
+  以及 **`setApprovalForAll`** —— 后者一次就把某个 NFT 合集的全部处置权交给对方，
+  之后对方随时可以转走，而你不会再收到任何交易确认。
 
 ## 相关工具
 
