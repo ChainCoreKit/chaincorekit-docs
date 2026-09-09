@@ -45,6 +45,11 @@
 - **Reverts are highlighted red** with a reason — walk the tree to find the failure.
 - **Dynamic / complex types** in the trace may show as raw encoding; combine aliases
   and the Calldata tool to dig in.
+- **Raw units when token decimals can't be read**: fund flow and asset changes fetch
+  each token's `decimals` live. If the node rate-limits or the token doesn't expose
+  `decimals`, the amount is labelled "decimals unknown — raw units" and shown
+  unconverted. That figure is a smallest-unit count, **not a human-readable
+  amount** — retrying with another RPC endpoint usually resolves it.
 
 ## Related tools
 
