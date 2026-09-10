@@ -50,7 +50,19 @@
 - **One on-chain transaction**: distribution completes in a single tx with one
   signature, but total gas grows with recipient count.
 - **Payer needs native coin for gas**: distributing native coin requires gas on top
-  of the total amount.
+  of the total amount. The balance pre-check **now includes the fee** — meaning
+  "disperse my entire balance" is caught up front as insufficient funds rather than
+  failing in your wallet at signing time. When the fee can't be estimated (a
+  rate-limited node, say) the check falls back to comparing the total alone: better to
+  let a legitimate dispersal through than to block it on a guess.
+- **The zero address is rejected**: a line holding `0x0000…0000` is treated as a
+  malformed address, skipped, and written back into the input box. Native coin sent
+  there lands on-chain and is **burned permanently**; most ERC-20 implementations
+  revert instead — and since a dispersal is **one transaction for every row**, a single
+  zero address makes **the whole batch fail and wastes all the gas**.
+- **Transaction links follow the chain the transaction is on**: if you switch networks
+  in your wallet after dispersing, the hash in the results still links to the block
+  explorer for the chain the transaction actually landed on, not the one you switched to.
 - **Verify the Disperse contract**: check it on the block explorer before writing,
   confirming it's the trusted distributor contract.
 - **Amount precision**: ERC-20 amounts are scaled by the token's `decimals`.
