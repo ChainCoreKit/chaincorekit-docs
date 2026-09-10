@@ -59,6 +59,13 @@
   matches the "wallet's current network" to avoid the wrong chain.
 - **tokenURI concatenation depends on the contract**: commonly Base URI + tokenId
   or Base URI + tokenId.json — make sure metadata is uploaded to that path.
+- **Don't drop the trailing slash** — the most common mistake at this step. Entering
+  `ipfs://Qm…` instead of `ipfs://Qm…/` concatenates to `ipfs://Qm…0` rather than
+  `ipfs://Qm…/0`, so **every token's metadata fails to resolve**: blank images in
+  wallets and marketplaces, and fixing it costs another transaction and more gas.
+  Below the field you'll see the **first tokenURI as it will actually be built**
+  (`tokenURI(0) → …`); glance at it before signing. It shows the real concatenation —
+  it will not silently add the slash for you.
 - **Verify imported contracts**: check on the block explorer whether the contract
   is verified before writing; be cautious if the ABI source isn't trusted.
 - **Native coins differ per chain**: Ethereum/Arbitrum/Base = ETH, Polygon = POL,
