@@ -32,6 +32,7 @@ or sent off your device.**
 | [Vanity Address](./evm/vanity.md) | Addresses with a chosen prefix/suffix |
 | [ABI Console](./evm/abi.md) | Import an ABI and call contracts visually |
 | [Selector Lookup](./evm/query-selector.md) | 4byte selector ↔ function signature |
+| [Token Inspector](./evm/token-inspector.md) | Read an ERC-20's name / symbol / decimals / supply and flag suspicious fields |
 | [Unit Converter](./evm/unit-convert.md) | Wei / Gwei / Ether conversion |
 | [Transaction Tracer](./evm/trace-view.md) | Inspect a transaction's flow, events and calls |
 | [Address & ENS](./evm/address.md) | EIP-55 checksum, ENS resolution |
