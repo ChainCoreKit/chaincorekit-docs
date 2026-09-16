@@ -78,6 +78,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | 工具 | 说明 |
 | --- | --- |
 | [钱包生成](./polkadot/dot-wallet.md) | 本地生成 Polkadot 钱包 |
+| [Polkadot 余额查询](./polkadot/dot-balance.md) | 查询 Polkadot / Kusama 账户余额、冻结与可转账金额 |
 | [SS58 地址转换](./polkadot/dot-ss58.md) | 不同链前缀间转换 SS58 地址 |
 | [DOT 单位换算](./polkadot/dot-unit.md) | Planck / DOT 换算 |
 | [Hash / Storage Key](./polkadot/dot-hash-storage.md) | 计算 storage key |

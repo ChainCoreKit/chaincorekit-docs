@@ -86,6 +86,7 @@ or sent off your device.**
 | Tool | What it does |
 | --- | --- |
 | [Polkadot Wallet Generator](./polkadot/dot-wallet.md) | Generate a Polkadot wallet locally |
+| [Polkadot Balance](./polkadot/dot-balance.md) | Look up Polkadot / Kusama account balance, locks and transferable amount |
 | [SS58 Convert](./polkadot/dot-ss58.md) | Convert SS58 across chain prefixes |
 | [DOT Units](./polkadot/dot-unit.md) | Planck / DOT conversion |
 | [Hash / Storage Key](./polkadot/dot-hash-storage.md) | Compute storage keys |
