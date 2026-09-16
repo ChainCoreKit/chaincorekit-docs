@@ -2,13 +2,14 @@
 
 # Unit Converter
 
-> Type any Ether unit and the rest convert live — every field is one-click copyable.
+> Type any Ether unit and the rest convert live; a separate arbitrary-precision field handles ERC-20 tokens. Every field is one-click copyable.
 
 ## When to use it
 
 - Convert amounts or gas prices between Wei / Gwei / Ether.
 - Check what a raw uint256 Wei value from a contract is in ETH.
 - Convert to finer-grained units (Kwei, Szabo, Finney, Kether, …).
+- **You have a token amount rather than ETH** — e.g. USDC's raw `1000000`, and you want to know how many USDC that is.
 
 ## Steps
 
@@ -18,6 +19,21 @@
    Gether · Tether.
 4. Use the **quick chips** (1 ETH / 0.1 ETH / 1 Gwei / 100 Gwei) to prefill, or the
    top-right button to **reset to 1 ETH**.
+
+### Converting ERC-20 token amounts
+
+The eleven units above are all **ether-family**, while most on-chain amounts are not
+ether. In the **arbitrary precision** section:
+
+1. Enter the token's **decimals** (look them up with the
+   [Token Inspector](./token-inspector.md) if you don't know them). Quick chips cover
+   USDC / USDT (6), WBTC (8) and DAI / WETH (18).
+2. Put the raw uint256 in the **Wei** field, or a human-readable figure in the
+   arbitrary-precision field — the two convert live in both directions.
+
+Changing the precision **does not clear** what you've entered: Wei is the single
+source of truth, so a new precision is just a different reading and every other
+field stays consistent.
 
 ## Inputs / outputs
 
