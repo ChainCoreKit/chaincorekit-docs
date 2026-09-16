@@ -68,6 +68,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [Instruction 编解码](./solana/sol-instruction.md) | 编码/解码指令数据 |
 | [Program IDL 浏览器](./solana/sol-idl.md) | 浏览 Anchor IDL |
 | [Solana 手续费与免租](./solana/sol-fee-rent.md) | 估算计算单元、手续费与租金 |
+| [Solana 余额查询](./solana/sol-balance.md) | 查询 SOL 余额与 SPL / Token-2022 持仓 |
 | [SPL Token 检查](./solana/sol-token-inspector.md) | Mint 的总量、精度、增发 / 冻结权限与 Token-2022 扩展 |
 | [Solana 交易解码](./solana/sol-tx-decode.md) | 解析交易的签名、账户、指令与地址查找表 |
 

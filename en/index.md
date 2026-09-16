@@ -76,6 +76,7 @@ or sent off your device.**
 | [Instruction Codec](./solana/sol-instruction.md) | Encode / decode instruction data |
 | [Program IDL](./solana/sol-idl.md) | Browse an Anchor IDL |
 | [Solana Compute / Fee / Rent](./solana/sol-fee-rent.md) | Estimate compute units, fees, rent |
+| [Solana Balance](./solana/sol-balance.md) | Look up SOL balance and SPL / Token-2022 holdings |
 | [SPL Token Inspector](./solana/sol-token-inspector.md) | Mint supply, decimals, authorities, Token-2022 extensions |
 | [Solana Transaction Decoder](./solana/sol-tx-decode.md) | Decode signatures, accounts, instructions and lookup tables |
 
