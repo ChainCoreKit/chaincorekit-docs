@@ -20,7 +20,8 @@
 
 ### Option A — Random bulk generation
 
-1. Choose a **key type**: `ed25519` or `ecdsa` (`sr25519` coming soon).
+1. Choose a **key type**: `sr25519` (the default, matching Polkadot wallets),
+   `ed25519`, or `ecdsa`.
 2. Choose an **SS58 prefix**: Polkadot (0) / Kusama (2) / Generic Substrate (42),
    which sets the prefix of the generated addresses.
 3. Choose a **generation mode**:
@@ -29,8 +30,8 @@
 4. Choose the **mnemonic length**: 12 / 15 / 18 / 21 / 24 words.
 5. Set the **count** (1–100).
 6. (Optional) Set a **derivation URI**: leave it blank with count > 1 to derive by
-   index `//0` `//1` …; enter a URI (e.g. `//hard` or `///password`) for a single
-   account.
+   index `//0` `//1` …; enter a URI (e.g. `//hard`, `/soft`, `///password`) for a
+   single account.
 7. Click **Generate**. The results table lists address and private key (masked by
    default).
 
@@ -44,24 +45,27 @@
 
 | Field | Meaning / format |
 | --- | --- |
-| Key type | `ed25519` / `ecdsa` (`sr25519` coming soon) |
+| Key type | `sr25519` (default) / `ed25519` / `ecdsa` |
 | SS58 prefix | Polkadot (0) / Kusama (2) / Generic Substrate (42) |
 | Generation mode | derive from mnemonic / independent |
 | Mnemonic length | 12 / 15 / 18 / 21 / 24 words (BIP39) |
 | Count | 1–100 |
-| Derivation URI (optional) | e.g. `//hard` or `///password`; blank with count > 1 derives by index `//0` `//1` … |
+| Derivation URI (optional) | e.g. `//hard`, `/soft` (sr25519 only), `///password`; blank with count > 1 derives by index `//0` `//1` … |
 | Import | BIP39 mnemonic (optionally `//path` `///password`), or 32-byte secret seed (`0x…`) |
 | Output | address, private key (masked by default); export addresses or export with keys |
 
 ## Notes & gotchas
 
-- **Key type differs from mainstream wallets**: Polkadot-ecosystem wallets derive
-  with sr25519 by default; this tool currently supports only ed25519 / ecdsa, so the
-  address from the same mnemonic here differs from what a mainstream (sr25519)
-  wallet shows — **don't use it to verify or receive assets**.
+- **Changing the key type gives you a different account**: Polkadot wallets
+  (polkadot-js, Talisman, SubWallet, Ledger) all default to sr25519, and so does this
+  tool — the same mnemonic yields the same address your wallet shows.
+  Switch to `ed25519` or `ecdsa` and that mnemonic resolves to **a different
+  account**; the page warns you when you do. Make sure the type matches before
+  verifying or receiving funds.
 - **Max 100** wallets per run.
-- **Derivation URI**: blank with count > 1 derives by index `//0` `//1` …; a URI
-  derives a single account (sr25519 soft derivation coming soon).
+- **Soft derivation (a single `/`) is sr25519-only**: it is a capability unique to
+  sr25519. Under `ed25519` / `ecdsa` a `/xxx` path prompts you to switch the key type
+  to sr25519, or to use hard derivation (`//`) instead.
 - **The SS58 prefix only affects the address text**: the underlying AccountId is
   unchanged; a new prefix isn't a new account. Switching the prefix **re-encodes
   the rows you already generated** in place — the addresses change, the AccountId
