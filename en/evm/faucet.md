@@ -32,6 +32,18 @@
 | Gating tag | no login / login / connect wallet / PoW mining / mainnet balance |
 | Claim | external link to a third-party faucet, or copy its URL |
 
+## Where claimed testnet funds can be used on this site
+
+This page lists more testnets than the rest of the site supports. **Sepolia, Arbitrum
+Sepolia, OP Sepolia, Base Sepolia, Polygon Amoy, BNB Chain Testnet and Avalanche Fuji**
+are selectable in the other tools (ABI calls, bulk disperse, balance lookups, and so on).
+The remaining ones — Hoodi, Aurora Testnet, Gnosis Chiado, Harmony Testnet, Celo
+Alfajores — have no reliable browser-usable public node, and **their cards say so
+explicitly**: funds claimed there can only be used in that chain's own explorer or wallet.
+
+Better to say it up front than to let you claim funds and then discover no tool can reach
+that chain, with nothing on the page explaining why.
+
 ## Notes & gotchas
 
 - **Navigation only** — faucets are third-party; the actual rules, limits, and

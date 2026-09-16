@@ -28,6 +28,17 @@
 | 门槛标签 | 免登录 / 需登录 / 需连接钱包 / 需挖矿 / 需主网余额 |
 | 领取入口 | 外链跳转到第三方水龙头，或复制其网址 |
 
+## 领到的测试币能在本站哪些工具里用
+
+水龙头收录的测试网比本站工具支持的多。**Sepolia、Arbitrum Sepolia、OP Sepolia、
+Base Sepolia、Polygon Amoy、BNB Chain Testnet、Avalanche Fuji** 这几条可以在本站
+其余工具（ABI 调用、批量分发、余额查询等）里直接选到；其余几条（Hoodi、
+Aurora Testnet、Gnosis Chiado、Harmony Testnet、Celo Alfajores）没有可靠的
+浏览器可用公共节点，**卡片上会直接标出来**——领到的测试币只能在那条链
+自己的区块浏览器或钱包里用。
+
+与其让你领完币回来发现工具连不上那条链（而页面上毫无提示），不如提前说清。
+
 ## 注意事项 & 常见坑
 
 - **只是导航，不代发币**：水龙头由第三方提供，实际发放规则、限额、冷却时间以对方页面为准。
