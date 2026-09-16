@@ -39,7 +39,7 @@
 
 ## Related tools
 
-- [Generate BTC Wallet](./btc-wallet.md) — generate addresses of each type locally
+- [BTC Wallet Generator](./btc-wallet.md) — generate addresses of each type locally
 - [Balance Checker](./btc-balance.md) — check balances across forms
 - [UTXO Lookup](./btc-utxo.md) — view unspent outputs
 - [Security model](../security.md)

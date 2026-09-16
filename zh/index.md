@@ -20,7 +20,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | 工具 | 说明 |
 | --- | --- |
 | [测试币水龙头](./evm/faucet.md) | 汇总各测试网水龙头入口 |
-| [生成钱包](./evm/generate-wallet.md) | 本地批量生成 EVM 钱包，支持助记词/私钥导入 |
+| [EVM 钱包生成](./evm/generate-wallet.md) | 本地批量生成 EVM 钱包，支持助记词/私钥导入 |
 | [靓号地址](./evm/vanity.md) | 生成带指定前后缀的地址 |
 | [ABI 可视化调用](./evm/abi.md) | 导入 ABI 图形化读写合约 |
 | [签名选择器查询](./evm/query-selector.md) | 4byte 选择器 ↔ 函数签名互查 |
@@ -45,7 +45,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 
 | 工具 | 说明 |
 | --- | --- |
-| [生成 BTC 钱包](./btc/btc-wallet.md) | 本地生成 BTC 钱包 |
+| [BTC 钱包生成](./btc/btc-wallet.md) | 本地生成 BTC 钱包 |
 | [地址类型转换](./btc/btc-addr-convert.md) | Legacy / SegWit / Taproot 互转 |
 | [余额批量查询](./btc/btc-balance.md) | 批量查询 BTC 地址余额 |
 | [UTXO 查询](./btc/btc-utxo.md) | 查询地址的 UTXO 列表 |
@@ -66,9 +66,9 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [PDA / ATA 计算](./solana/sol-address.md) | 派生 PDA 与关联代币账户 |
 | [Instruction 编解码](./solana/sol-instruction.md) | 编码/解码指令数据 |
 | [Program IDL 浏览器](./solana/sol-idl.md) | 浏览 Anchor IDL |
-| [Compute / Fee / Rent](./solana/sol-fee-rent.md) | 估算计算单元、手续费与租金 |
-| [Token 检查](./solana/sol-token-inspector.md) | Mint 的总量、精度、增发 / 冻结权限与 Token-2022 扩展 |
-| [交易解码](./solana/sol-tx-decode.md) | 解析交易的签名、账户、指令与地址查找表 |
+| [Solana 手续费与免租](./solana/sol-fee-rent.md) | 估算计算单元、手续费与租金 |
+| [SPL Token 检查](./solana/sol-token-inspector.md) | Mint 的总量、精度、增发 / 冻结权限与 Token-2022 扩展 |
+| [Solana 交易解码](./solana/sol-tx-decode.md) | 解析交易的签名、账户、指令与地址查找表 |
 
 ### Polkadot 工具
 
@@ -85,7 +85,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | 工具 | 说明 |
 | --- | --- |
 | [Disperse 合约分发](./bulk/disperse.md) | 通过合约一对多分发 |
-| [钱包逐笔转账](./bulk/bulk-send.md) | 当前钱包逐笔发送 |
+| [钱包批量转账](./bulk/bulk-send.md) | 当前钱包逐笔发送 |
 | [私钥批量转账](./bulk/bulk-send2.md) | 导入多私钥批量发送 |
 | [私钥归集 · Sweep](./bulk/bulk-collect.md) | 多钱包资产归集到一个地址 |
 | [余额批量查询](./bulk/bulk-query-balance.md) | 批量查询地址余额 |

@@ -37,7 +37,7 @@
 
 - [Instruction 编解码](./sol-instruction.md) — 依同一份 IDL 编解码 Instruction Data
 - [PDA / ATA 计算](./sol-address.md) — 计算 program 用到的 PDA / ATA
-- [Compute / Fee / Rent](./sol-fee-rent.md) — 估算交易费用
+- [Solana 手续费与免租](./sol-fee-rent.md) — 估算交易费用
 - [安全模型](../security.md)
 
 ---

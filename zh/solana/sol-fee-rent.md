@@ -1,6 +1,6 @@
 [English](../../en/solana/sol-fee-rent.md) · **简体中文** · [← 文档总览](../index.md)
 
-# Compute / Fee / Rent · Solana
+# Solana 手续费与免租（Solana Compute / Fee / Rent）· Solana
 
 > 本地估算 Solana 交易的 Compute Unit、签名费、优先费，以及账户免租余额（Rent Exemption），无需连网。
 

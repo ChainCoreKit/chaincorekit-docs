@@ -59,8 +59,8 @@ misleading.
 ## Related tools
 
 - [Generate EVM Wallet](./generate-wallet.md)
-- [Generate BTC Wallet](../btc/btc-wallet.md)
-- [Generate Solana Wallet](../solana/sol-wallet.md)
+- [BTC Wallet Generator](../btc/btc-wallet.md)
+- [Solana Wallet Generator](../solana/sol-wallet.md)
 - [Security model](../security.md)
 
 ---

@@ -35,7 +35,7 @@
 ## Related tools
 
 - [UTXO Lookup](./btc-utxo.md) — view unspent-output details
-- [Generate BTC Wallet](./btc-wallet.md) — generate addresses locally
+- [BTC Wallet Generator](./btc-wallet.md) — generate addresses locally
 - [Address Format Convert](./btc-addr-convert.md) — convert between address forms
 - [Security model](../security.md)
 

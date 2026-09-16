@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/evm/generate-wallet.md) · [← Overview](../index.md)
 
-# Generate Wallet · EVM
+# EVM Wallet Generator · EVM
 
 > Generate EVM wallets locally in bulk — derive from a mnemonic, or import an
 > existing key/mnemonic to recreate wallets.

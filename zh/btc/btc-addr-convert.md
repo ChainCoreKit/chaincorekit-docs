@@ -33,7 +33,7 @@
 
 ## 相关工具
 
-- [生成 BTC 钱包](./btc-wallet.md) — 本地生成各类型地址
+- [BTC 钱包生成](./btc-wallet.md) — 本地生成各类型地址
 - [BTC 余额批量查询](./btc-balance.md) — 查各形态地址余额
 - [UTXO 查询](./btc-utxo.md) — 查看未花费输出
 - [安全模型](../security.md)

@@ -54,7 +54,7 @@
 
 ## Related tools
 
-- [Generate Wallet](./generate-wallet.md) — bulk-generate / import EVM wallets
+- [EVM Wallet Generator](./generate-wallet.md) — bulk-generate / import EVM wallets
 - [Address & ENS](./address.md) — checksum, EIP-55, ENS resolution
 - [Faucets](./faucet.md) — get test coins for a new address
 - [Security model](../security.md)

@@ -58,7 +58,7 @@
 
 - [Instruction Codec](./sol-instruction.md) — encode/decode instruction data via IDL
 - [Program IDL](./sol-idl.md) — browse an Anchor IDL structurally
-- [Generate Wallet](./sol-wallet.md) — generate / import wallets locally
+- [Solana Wallet Generator](./sol-wallet.md) — generate / import wallets locally
 - [Security model](../security.md)
 
 ---

@@ -1,6 +1,6 @@
 [English](../../en/solana/sol-wallet.md) · **简体中文** · [← 文档总览](../index.md)
 
-# Solana 钱包生成（Generate Wallet）· Solana
+# Solana 钱包生成（Solana Wallet Generator）· Solana
 
 > 本地生成 Ed25519 钱包（BIP39 助记词 + SLIP-0010 派生），也支持导入 Base58 私钥 / 助记词 / CLI JSON 数组还原。
 
@@ -59,7 +59,7 @@
 
 - [PDA / ATA 计算](./sol-address.md) — 计算 PDA 与 ATA
 - [Instruction 编解码](./sol-instruction.md) — 依 IDL 编解码 Instruction Data
-- [Compute / Fee / Rent](./sol-fee-rent.md) — 估算费用与免租余额
+- [Solana 手续费与免租](./sol-fee-rent.md) — 估算费用与免租余额
 - [安全模型](../security.md)
 
 ---

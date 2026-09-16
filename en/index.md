@@ -28,7 +28,7 @@ or sent off your device.**
 | Tool | What it does |
 | --- | --- |
 | [Faucets](./evm/faucet.md) | Testnet faucet directory |
-| [Generate Wallet](./evm/generate-wallet.md) | Generate EVM wallets locally; import mnemonic/key |
+| [EVM Wallet Generator](./evm/generate-wallet.md) | Generate EVM wallets locally; import mnemonic/key |
 | [Vanity Address](./evm/vanity.md) | Addresses with a chosen prefix/suffix |
 | [ABI Console](./evm/abi.md) | Import an ABI and call contracts visually |
 | [Selector Lookup](./evm/query-selector.md) | 4byte selector ↔ function signature |
@@ -53,7 +53,7 @@ or sent off your device.**
 
 | Tool | What it does |
 | --- | --- |
-| [Generate Wallet](./btc/btc-wallet.md) | Generate a BTC wallet locally |
+| [BTC Wallet Generator](./btc/btc-wallet.md) | Generate a BTC wallet locally |
 | [Address Format Convert](./btc/btc-addr-convert.md) | Legacy / SegWit / Taproot |
 | [Balance Checker](./btc/btc-balance.md) | Batch-check BTC address balances |
 | [UTXO Lookup](./btc/btc-utxo.md) | List an address's UTXOs |
@@ -70,19 +70,19 @@ or sent off your device.**
 
 | Tool | What it does |
 | --- | --- |
-| [Generate Wallet](./solana/sol-wallet.md) | Generate a Solana wallet locally |
+| [Solana Wallet Generator](./solana/sol-wallet.md) | Generate a Solana wallet locally |
 | [PDA / ATA](./solana/sol-address.md) | Derive PDAs and associated token accounts |
 | [Instruction Codec](./solana/sol-instruction.md) | Encode / decode instruction data |
 | [Program IDL](./solana/sol-idl.md) | Browse an Anchor IDL |
-| [Compute / Fee / Rent](./solana/sol-fee-rent.md) | Estimate compute units, fees, rent |
-| [Token Inspector](./solana/sol-token-inspector.md) | Mint supply, decimals, authorities, Token-2022 extensions |
-| [Transaction Decoder](./solana/sol-tx-decode.md) | Decode signatures, accounts, instructions and lookup tables |
+| [Solana Compute / Fee / Rent](./solana/sol-fee-rent.md) | Estimate compute units, fees, rent |
+| [SPL Token Inspector](./solana/sol-token-inspector.md) | Mint supply, decimals, authorities, Token-2022 extensions |
+| [Solana Transaction Decoder](./solana/sol-tx-decode.md) | Decode signatures, accounts, instructions and lookup tables |
 
 ### Polkadot
 
 | Tool | What it does |
 | --- | --- |
-| [Generate Wallet](./polkadot/dot-wallet.md) | Generate a Polkadot wallet locally |
+| [Polkadot Wallet Generator](./polkadot/dot-wallet.md) | Generate a Polkadot wallet locally |
 | [SS58 Convert](./polkadot/dot-ss58.md) | Convert SS58 across chain prefixes |
 | [DOT Units](./polkadot/dot-unit.md) | Planck / DOT conversion |
 | [Hash / Storage Key](./polkadot/dot-hash-storage.md) | Compute storage keys |

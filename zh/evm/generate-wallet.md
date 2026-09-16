@@ -1,6 +1,6 @@
 [English](../../en/evm/generate-wallet.md) · **简体中文** · [← 文档总览](../index.md)
 
-# 生成钱包（Generate Wallet）· EVM
+# EVM 钱包生成（EVM Wallet Generator）· EVM
 
 > 本地批量生成 EVM 钱包，支持助记词派生，也支持用已有私钥/助记词导入创建。
 

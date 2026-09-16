@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/solana/sol-token-inspector.md) · [← Docs home](../index.md)
 
-# Token Inspector · Solana
+# SPL Token Inspector · Solana
 
 > Read a mint account: supply, decimals, mint and freeze authority, and Token-2022 extension fields.
 
@@ -37,7 +37,7 @@
 
 - [Address / PDA / ATA](./sol-address.md) — derive an ATA from mint + owner
 - [Program IDL](./sol-idl.md) — browse an Anchor IDL
-- [Compute / Fee / Rent](./sol-fee-rent.md) — fee and rent estimates
+- [Solana Compute / Fee / Rent](./sol-fee-rent.md) — fee and rent estimates
 
 ---
 

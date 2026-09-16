@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/polkadot/dot-wallet.md) · [← Overview](../index.md)
 
-# Generate Wallet · Polkadot
+# Polkadot Wallet Generator · Polkadot
 
 > Generate Substrate wallets locally (BIP39 + SS58), or import a mnemonic / key.
 > Keys and mnemonics never leave your device.

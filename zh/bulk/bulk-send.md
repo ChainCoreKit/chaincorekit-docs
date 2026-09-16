@@ -1,6 +1,6 @@
 [English](../../en/bulk/bulk-send.md) · **简体中文** · [← 文档总览](../index.md)
 
-# 钱包逐笔转账（Per-wallet Send）
+# 钱包批量转账（Bulk Send (Wallet)）
 
 > 用当前连接的钱包，逐笔签名逐个转出原生币或 ERC-20，无需任何合约、完全自控。
 

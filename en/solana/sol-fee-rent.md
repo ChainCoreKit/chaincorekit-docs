@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/solana/sol-fee-rent.md) · [← Overview](../index.md)
 
-# Compute / Fee / Rent · Solana
+# Solana Compute / Fee / Rent · Solana
 
 > Estimate a Solana transaction's Compute Units, signature fee, and priority fee,
 > plus an account's rent-exemption balance — all locally, no network.

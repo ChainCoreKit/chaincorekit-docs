@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/btc/btc-wallet.md) · [← Overview](../index.md)
 
-# Generate BTC Wallet · BTC
+# BTC Wallet Generator · BTC
 
 > Generate Bitcoin wallets locally in bulk: one BIP39 mnemonic derives many
 > addresses along the BIP path for the chosen address type — Legacy, Nested

@@ -35,7 +35,7 @@
 
 - [UTXO 查询](./btc-utxo.md) — 查看输入引用的 UTXO
 - [BTC 地址类型转换](./btc-addr-convert.md) — 核对输出地址形态
-- [生成 BTC 钱包](./btc-wallet.md) — 本地生成地址
+- [BTC 钱包生成](./btc-wallet.md) — 本地生成地址
 - [安全模型](../security.md)
 
 ---

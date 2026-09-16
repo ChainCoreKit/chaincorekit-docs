@@ -46,7 +46,7 @@
 
 ## Related tools
 
-- [Generate Wallet](./generate-wallet.md) — create an address to receive coins
+- [EVM Wallet Generator](./generate-wallet.md) — create an address to receive coins
 - [Vanity Address](./vanity.md) — addresses with a chosen prefix/suffix
 - [Token Issuance](./token-issuance.md) — deploy and mint an ERC-20 on a testnet
 - [Security model](../security.md)

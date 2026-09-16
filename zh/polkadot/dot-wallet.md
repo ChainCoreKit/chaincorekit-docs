@@ -1,6 +1,6 @@
 [English](../../en/polkadot/dot-wallet.md) · **简体中文** · [← 文档总览](../index.md)
 
-# Polkadot 钱包生成（Generate Wallet）
+# Polkadot 钱包生成（Polkadot Wallet Generator）
 
 > 本地生成 Substrate 钱包（BIP39 + SS58），或导入助记词 / 私钥；助记词与私钥不出本机。
 

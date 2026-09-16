@@ -33,7 +33,7 @@
 ## 相关工具
 
 - [UTXO 查询](./btc-utxo.md) — 查看未花费输出明细
-- [生成 BTC 钱包](./btc-wallet.md) — 本地生成地址
+- [BTC 钱包生成](./btc-wallet.md) — 本地生成地址
 - [BTC 地址类型转换](./btc-addr-convert.md) — 在各地址形态间换算
 - [安全模型](../security.md)
 

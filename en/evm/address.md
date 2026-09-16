@@ -47,7 +47,7 @@
 
 - [Vanity Address](./vanity.md) — addresses with a chosen prefix/suffix
 - [Hash Tools](./hash-tool.md) — keccak-256 and other hashes / encodings
-- [Generate Wallet](./generate-wallet.md) — bulk-generate / import EVM wallets
+- [EVM Wallet Generator](./generate-wallet.md) — bulk-generate / import EVM wallets
 - [Security model](../security.md)
 
 ---

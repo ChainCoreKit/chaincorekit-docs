@@ -42,7 +42,7 @@
 
 ## 相关工具
 
-- [生成钱包](./generate-wallet.md) — 批量生成 / 导入 EVM 钱包
+- [EVM 钱包生成](./generate-wallet.md) — 批量生成 / 导入 EVM 钱包
 - [地址转换与 ENS](./address.md) — 校验地址、EIP-55、ENS 解析
 - [测试币水龙头](./faucet.md) — 为新地址领取测试币
 - [安全模型](../security.md)

@@ -27,7 +27,7 @@ to continue".
 - **Independent mnemonics**: each wallet gets its own unrelated mnemonic and must
   be backed up separately.
 
-See [Generate Wallet](./evm/generate-wallet.md).
+See [EVM Wallet Generator](./evm/generate-wallet.md).
 
 ## Why distinguish Wei / Gwei / Ether?
 

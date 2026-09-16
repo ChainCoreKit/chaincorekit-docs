@@ -51,7 +51,7 @@
 
 ## 相关工具
 
-- [钱包逐笔转账](./bulk-send.md) — 用连接的钱包逐笔发送
+- [钱包批量转账](./bulk-send.md) — 用连接的钱包逐笔发送
 - [Disperse 合约分发](./disperse.md) — 一笔交易一对多分发
 - [私钥归集 · Sweep](./bulk-collect.md) — 多钱包资产归集到一个地址
 - [余额批量查询](./bulk-query-balance.md) — 批量查询余额

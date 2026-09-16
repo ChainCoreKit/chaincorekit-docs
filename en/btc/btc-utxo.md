@@ -36,7 +36,7 @@
 
 - [Balance Checker](./btc-balance.md) — balance totals only
 - [PSBT Decode](./btc-psbt.md) — inspect an unsigned transaction
-- [Generate BTC Wallet](./btc-wallet.md) — generate addresses locally
+- [BTC Wallet Generator](./btc-wallet.md) — generate addresses locally
 - [Security model](../security.md)
 
 ---

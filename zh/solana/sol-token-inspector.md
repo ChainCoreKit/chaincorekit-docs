@@ -1,6 +1,6 @@
 [English](../../en/solana/sol-token-inspector.md) · **简体中文** · [← 文档总览](../index.md)
 
-# Token 检查（Token Inspector）· Solana
+# SPL Token 检查（SPL Token Inspector）· Solana
 
 > 读取 Mint 账户，看清总量、精度、增发与冻结权限，以及 Token-2022 的扩展字段。
 
@@ -37,7 +37,7 @@
 
 - [地址与 PDA / ATA](./sol-address.md) — 由 mint + owner 推出 ATA 地址
 - [Program IDL 浏览器](./sol-idl.md) — 浏览 Anchor IDL
-- [Compute / Fee / Rent](./sol-fee-rent.md) — 费用与租金估算
+- [Solana 手续费与免租](./sol-fee-rent.md) — 费用与租金估算
 
 ---
 

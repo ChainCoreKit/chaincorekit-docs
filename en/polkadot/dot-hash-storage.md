@@ -65,7 +65,7 @@
 - [SS58 Convert](./dot-ss58.md) — get an AccountId32 from an SS58 address
 - [SCALE Codec](./dot-scale.md) — handle SCALE encoding by hand
 - [DOT Units](./dot-unit.md) — Planck ↔ main unit
-- [Generate Wallet](./dot-wallet.md) — generate a Substrate wallet locally
+- [Polkadot Wallet Generator](./dot-wallet.md) — generate a Substrate wallet locally
 - [Security model](../security.md)
 
 ---

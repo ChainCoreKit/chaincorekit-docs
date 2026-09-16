@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/solana/sol-tx-decode.md) · [← Docs home](../index.md)
 
-# Transaction Decoder · Solana
+# Solana Transaction Decoder · Solana
 
 > Paste a serialized transaction and decode its version, signatures, account roles, instructions and lookup table references — locally.
 
@@ -36,7 +36,7 @@
 
 - [Instruction Codec](./sol-instruction.md) — encode / decode a single instruction's data
 - [Program IDL](./sol-idl.md) — browse an Anchor IDL
-- [Token Inspector](./sol-token-inspector.md) — mint supply, authorities and extensions
+- [SPL Token Inspector](./sol-token-inspector.md) — mint supply, authorities and extensions
 
 ---
 

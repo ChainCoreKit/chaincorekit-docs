@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/bulk/bulk-send.md) · [← Overview](../index.md)
 
-# Per-wallet Send
+# Bulk Send (Wallet)
 
 > Send native coins or ERC-20 to many recipients one transfer at a time from the
 > connected wallet — no contract, fully self-custodial.

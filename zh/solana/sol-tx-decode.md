@@ -1,6 +1,6 @@
 [English](../../en/solana/sol-tx-decode.md) · **简体中文** · [← 文档总览](../index.md)
 
-# 交易解码（Transaction Decoder）· Solana
+# Solana 交易解码（Solana Transaction Decoder）· Solana
 
 > 粘贴序列化后的交易，本地解出版本、签名、账户角色、指令与地址查找表引用。
 
@@ -36,7 +36,7 @@
 
 - [Instruction 编解码](./sol-instruction.md) — 单条指令数据的编解码
 - [Program IDL 浏览器](./sol-idl.md) — 浏览 Anchor IDL
-- [Token 检查](./sol-token-inspector.md) — Mint 的总量、权限与扩展
+- [SPL Token 检查](./sol-token-inspector.md) — Mint 的总量、权限与扩展
 
 ---
 

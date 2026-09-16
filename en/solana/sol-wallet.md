@@ -1,6 +1,6 @@
 **English** · [简体中文](../../zh/solana/sol-wallet.md) · [← Overview](../index.md)
 
-# Generate Wallet · Solana
+# Solana Wallet Generator · Solana
 
 > Generate Ed25519 wallets locally (BIP39 mnemonic + SLIP-0010 derivation), or
 > import a Base58 key / mnemonic / CLI JSON array to recreate them.
@@ -77,7 +77,7 @@ The derivation path is `m/44'/501'/i'/0'` (all hardened, the Phantom convention)
 
 - [PDA / ATA](./sol-address.md) — compute PDAs and ATAs
 - [Instruction Codec](./sol-instruction.md) — encode/decode instruction data via IDL
-- [Compute / Fee / Rent](./sol-fee-rent.md) — estimate fees and rent exemption
+- [Solana Compute / Fee / Rent](./sol-fee-rent.md) — estimate fees and rent exemption
 - [Security model](../security.md)
 
 ---

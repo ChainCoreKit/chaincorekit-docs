@@ -50,7 +50,7 @@
 
 ## Related tools
 
-- [Generate Wallet](./dot-wallet.md) — generate a Substrate wallet locally
+- [Polkadot Wallet Generator](./dot-wallet.md) — generate a Substrate wallet locally
 - [Substrate Hash / Storage Key](./dot-hash-storage.md) — derive a storage key from an AccountId
 - [DOT Units](./dot-unit.md) — Planck ↔ main unit
 - [SCALE Codec](./dot-scale.md) — encode / decode by type expression

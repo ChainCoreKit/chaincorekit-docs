@@ -1,6 +1,6 @@
 [English](../../en/btc/btc-wallet.md) · **简体中文** · [← 文档总览](../index.md)
 
-# 生成 BTC 钱包（Generate BTC Wallet）· BTC
+# BTC 钱包生成（BTC Wallet Generator）· BTC
 
 > 本地批量生成比特币钱包：一条 BIP39 助记词按所选地址类型的 BIP 路径真实派生多个地址，支持 Legacy / Nested SegWit / Native SegWit / Taproot 四种类型，也支持用已有 WIF 私钥导入。私钥不出本机。
 

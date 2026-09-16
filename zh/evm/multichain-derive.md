@@ -46,7 +46,7 @@
 ## 相关工具
 
 - [生成 EVM 钱包](./generate-wallet.md)
-- [生成 BTC 钱包](../btc/btc-wallet.md)
+- [BTC 钱包生成](../btc/btc-wallet.md)
 - [Solana 钱包生成](../solana/sol-wallet.md)
 - [安全模型](../security.md)
 

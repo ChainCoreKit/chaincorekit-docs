@@ -43,7 +43,7 @@
 
 - [靓号地址](./vanity.md) — 生成带指定前后缀的地址
 - [Hash 工具](./hash-tool.md) — keccak-256 等哈希与编码
-- [生成钱包](./generate-wallet.md) — 批量生成 / 导入 EVM 钱包
+- [EVM 钱包生成](./generate-wallet.md) — 批量生成 / 导入 EVM 钱包
 - [安全模型](../security.md)
 
 ---

@@ -37,7 +37,7 @@
 
 ## 相关工具
 
-- [生成钱包](./generate-wallet.md) — 先生成收测试币的钱包地址
+- [EVM 钱包生成](./generate-wallet.md) — 先生成收测试币的钱包地址
 - [靓号地址](./vanity.md) — 生成带指定前后缀的地址
 - [Token 发行](./token-issuance.md) — 在测试网部署并铸造 ERC-20
 - [安全模型](../security.md)

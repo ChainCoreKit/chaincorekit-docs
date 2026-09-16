@@ -44,7 +44,7 @@
 
 ## 相关工具
 
-- [钱包逐笔转账](./bulk-send.md) — 逐笔签名、完全自控
+- [钱包批量转账](./bulk-send.md) — 逐笔签名、完全自控
 - [私钥批量转账](./bulk-send2.md) — 导入多私钥并发批量发送
 - [私钥归集 · Sweep](./bulk-collect.md) — 多钱包资产归集到一个地址
 - [余额批量查询](./bulk-query-balance.md) — 批量查询余额

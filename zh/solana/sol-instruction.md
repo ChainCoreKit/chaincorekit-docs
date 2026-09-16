@@ -46,7 +46,7 @@
 
 - [Program IDL 浏览器](./sol-idl.md) — 先结构化浏览 IDL 再编解码
 - [PDA / ATA 计算](./sol-address.md) — 计算指令用到的 PDA / ATA
-- [Compute / Fee / Rent](./sol-fee-rent.md) — 估算交易费用
+- [Solana 手续费与免租](./sol-fee-rent.md) — 估算交易费用
 - [安全模型](../security.md)
 
 ---

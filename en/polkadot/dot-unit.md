@@ -50,7 +50,7 @@
 - [SS58 Convert](./dot-ss58.md) — SS58 ↔ AccountId32
 - [Substrate Hash / Storage Key](./dot-hash-storage.md) — Blake2 / XXHash and storage keys
 - [SCALE Codec](./dot-scale.md) — encode / decode by type expression
-- [Generate Wallet](./dot-wallet.md) — generate a Substrate wallet locally
+- [Polkadot Wallet Generator](./dot-wallet.md) — generate a Substrate wallet locally
 - [Security model](../security.md)
 
 ---

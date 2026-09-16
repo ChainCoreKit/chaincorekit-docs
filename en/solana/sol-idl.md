@@ -45,7 +45,7 @@
 
 - [Instruction Codec](./sol-instruction.md) — encode/decode instruction data with the same IDL
 - [PDA / ATA](./sol-address.md) — compute the PDAs / ATAs a program uses
-- [Compute / Fee / Rent](./sol-fee-rent.md) — estimate transaction fees
+- [Solana Compute / Fee / Rent](./sol-fee-rent.md) — estimate transaction fees
 - [Security model](../security.md)
 
 ---

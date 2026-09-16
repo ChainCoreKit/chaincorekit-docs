@@ -50,7 +50,7 @@
 - [Substrate Hash / Storage Key](./dot-hash-storage.md) — storage-key derivation
 - [SS58 Convert](./dot-ss58.md) — SS58 ↔ AccountId32
 - [DOT Units](./dot-unit.md) — Planck ↔ main unit
-- [Generate Wallet](./dot-wallet.md) — generate a Substrate wallet locally
+- [Polkadot Wallet Generator](./dot-wallet.md) — generate a Substrate wallet locally
 - [Security model](../security.md)
 
 ---

@@ -34,7 +34,7 @@
 
 - [BTC 余额批量查询](./btc-balance.md) — 只看余额汇总
 - [PSBT 解码](./btc-psbt.md) — 解析待签名交易
-- [生成 BTC 钱包](./btc-wallet.md) — 本地生成地址
+- [BTC 钱包生成](./btc-wallet.md) — 本地生成地址
 - [安全模型](../security.md)
 
 ---
