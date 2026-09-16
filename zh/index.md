@@ -50,6 +50,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [地址类型转换](./btc/btc-addr-convert.md) | Legacy / SegWit / Taproot 互转 |
 | [余额批量查询](./btc/btc-balance.md) | 批量查询 BTC 地址余额 |
 | [UTXO 查询](./btc/btc-utxo.md) | 查询地址的 UTXO 列表 |
+| [原始交易解码](./btc/btc-tx-decode.md) | 解码已签名的 BTC 原始交易，查看输入输出、TXID 与费率 |
 | [PSBT 解码](./btc/btc-psbt.md) | 解析 PSBT 内容 |
 
 ### NFT 工具

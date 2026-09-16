@@ -58,6 +58,7 @@ or sent off your device.**
 | [Address Format Convert](./btc/btc-addr-convert.md) | Legacy / SegWit / Taproot |
 | [Balance Checker](./btc/btc-balance.md) | Batch-check BTC address balances |
 | [UTXO Lookup](./btc/btc-utxo.md) | List an address's UTXOs |
+| [Raw Transaction Decoder](./btc/btc-tx-decode.md) | Decode a signed BTC raw transaction — inputs, outputs, TXID and fee rate |
 | [PSBT Decode](./btc/btc-psbt.md) | Inspect a PSBT |
 
 ### NFT
