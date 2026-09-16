@@ -67,8 +67,7 @@
 ## Related tools
 
 - [Calldata Codec](./calldata.md) — encode/decode call data manually
-- [Selector Lookup](./query-selector.md) — selector ↔ function signature
-- [Event TopicID](./topic-id.md) — compute an event's TopicID
+- [Signature Lookup](./signature-lookup.md) — both the selector and the TopicID are slices of the keccak-256 hash
 - [Unit Converter](./unit-convert.md) — Wei / Gwei / Ether
 - [Security model](../security.md)
 

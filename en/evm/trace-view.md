@@ -54,8 +54,7 @@
 ## Related tools
 
 - [Calldata Codec](./calldata.md) — decode Input data from the trace
-- [Selector Lookup](./query-selector.md) — 4-byte selector ↔ signature
-- [Event TopicID](./topic-id.md) — event signature ↔ TopicID
+- [Signature Lookup](./signature-lookup.md) — both the selector and the TopicID are slices of the keccak-256 hash
 - [ABI Console](./abi.md) — call contracts visually
 - [Security model](../security.md)
 

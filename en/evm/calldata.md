@@ -55,7 +55,7 @@
 
 ## Related tools
 
-- [Selector Lookup](./query-selector.md) — 4-byte selector ↔ signature
+- [Signature Lookup](./signature-lookup.md) — both the selector and the TopicID are slices of the keccak-256 hash
 - [Unit Converter](./unit-convert.md) — Wei / Gwei / Ether
 - [Transaction Tracer](./trace-view.md) — parse internal calls and Input
 - [ABI Console](./abi.md) — call contracts visually

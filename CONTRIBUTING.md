@@ -40,7 +40,7 @@ Every tool page exists in **both** `en/` and `zh/` with the **same filename**
 5. **Keep technical terms in English**: ABI, ERC-20, Calldata, Wei/Gwei/Ether,
    SS58, PSBT, PDA, etc. Translate the explanation, not the term.
 6. **English is meaning-first, not word-for-word** — use industry-standard
-   wording (Sweep, Balance Checker, Transaction Tracer, Selector Lookup).
+   wording (Sweep, Balance Checker, Transaction Tracer, Signature Lookup).
 7. **No "open-source" claims about the product** — the application code is not
    published. Describe security as "local-first / keys never leave your device".
 

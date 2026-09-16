@@ -38,8 +38,7 @@
 
 ## Related tools
 
-- [Selector Lookup](./query-selector.md) — first 4 bytes of keccak-256 = selector
-- [Event TopicID](./topic-id.md) — keccak-256 of an event signature
+- [Signature Lookup](./signature-lookup.md) — both the selector and the TopicID are slices of the keccak-256 hash
 - [Address & ENS](./address.md) — EIP-55 checksum (keccak-256 based)
 - [Calldata Codec](./calldata.md) — encode / decode call data
 - [Security model](../security.md)

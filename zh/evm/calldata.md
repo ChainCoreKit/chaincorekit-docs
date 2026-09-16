@@ -46,7 +46,7 @@
 
 ## 相关工具
 
-- [签名选择器查询](./query-selector.md) — 4 字节选择器 ↔ 函数签名
+- [签名查询](./signature-lookup.md) — 选择器与 TopicID 都是 keccak-256 的切片
 - [单位换算](./unit-convert.md) — Wei / Gwei / Ether 换算
 - [交易分析](./trace-view.md) — 解析交易内部调用与 Input
 - [ABI 可视化调用](./abi.md) — 图形化读写合约

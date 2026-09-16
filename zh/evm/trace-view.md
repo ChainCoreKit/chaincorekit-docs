@@ -42,8 +42,7 @@
 ## 相关工具
 
 - [Calldata 编解码](./calldata.md) — 解读调用栈中的 Input 数据
-- [签名选择器查询](./query-selector.md) — 4 字节选择器 ↔ 函数签名
-- [事件主题 TopicID](./topic-id.md) — 事件签名 ↔ TopicID
+- [签名查询](./signature-lookup.md) — 选择器与 TopicID 都是 keccak-256 的切片
 - [ABI 可视化调用](./abi.md) — 图形化读写合约
 - [安全模型](../security.md)
 

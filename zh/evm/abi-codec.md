@@ -55,9 +55,8 @@
 ## 相关工具
 
 - [Calldata 编解码](./calldata.md) — 解码交易输入数据
-- [事件 TopicID](./topic-id.md) — 由事件签名算 topic0
 - [交易堆栈 Trace 分析](./trace-view.md) — 完整交易的调用树与事件
-- [函数签名查询](./query-selector.md) — 选择器与签名互查
+- [签名查询](./signature-lookup.md) — 选择器与 TopicID 都是 keccak-256 的切片
 
 ---
 

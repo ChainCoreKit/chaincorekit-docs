@@ -53,8 +53,7 @@
 ## 相关工具
 
 - [Calldata 编解码](./calldata.md) — 手动编解码调用数据
-- [签名选择器查询](./query-selector.md) — 选择器 ↔ 函数签名
-- [事件主题 TopicID](./topic-id.md) — 计算事件 TopicID
+- [签名查询](./signature-lookup.md) — 选择器与 TopicID 都是 keccak-256 的切片
 - [单位换算](./unit-convert.md) — Wei / Gwei / Ether
 - [安全模型](../security.md)
 

@@ -31,12 +31,11 @@ or sent off your device.**
 | [EVM Wallet Generator](./evm/generate-wallet.md) | Generate EVM wallets locally; import mnemonic/key |
 | [Vanity Address](./evm/vanity.md) | Addresses with a chosen prefix/suffix |
 | [ABI Console](./evm/abi.md) | Import an ABI and call contracts visually |
-| [Selector Lookup](./evm/query-selector.md) | 4byte selector ↔ function signature |
+| [Signature Lookup](./evm/signature-lookup.md) | Function / event signature ⇄ 4-byte selector and 32-byte TopicID |
 | [Token Inspector](./evm/token-inspector.md) | Read an ERC-20's name / symbol / decimals / supply and flag suspicious fields |
 | [Unit Converter](./evm/unit-convert.md) | Wei / Gwei / Ether conversion |
 | [Transaction Tracer](./evm/trace-view.md) | Inspect a transaction's flow, events and calls |
 | [Address & ENS](./evm/address.md) | EIP-55 checksum, ENS resolution |
-| [Event TopicID](./evm/topic-id.md) | Compute an event signature's TopicID |
 | [Hash Tools](./evm/hash-tool.md) | keccak-256 and related hashing |
 | [Calldata Codec](./evm/calldata.md) | Encode / decode transaction calldata |
 | [ABI Codec](./evm/abi-codec.md) | Encode constructor args; decode event logs and revert errors |

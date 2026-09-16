@@ -72,9 +72,8 @@
 ## Related tools
 
 - [Calldata Codec](./calldata.md) — decode transaction input data
-- [Event TopicID](./topic-id.md) — derive topic0 from an event signature
+- [Signature Lookup](./signature-lookup.md) — both the selector and the TopicID are slices of the keccak-256 hash
 - [Transaction Tracer](./trace-view.md) — full call tree and events for a transaction
-- [Selector Lookup](./query-selector.md) — selector ⇄ signature
 
 ---
 

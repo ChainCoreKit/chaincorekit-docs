@@ -33,8 +33,7 @@
 
 ## 相关工具
 
-- [签名选择器查询](./query-selector.md) — keccak-256 前 4 字节即选择器
-- [事件主题 TopicID](./topic-id.md) — 事件签名的 keccak-256
+- [签名查询](./signature-lookup.md) — 选择器与 TopicID 都是 keccak-256 的切片
 - [地址转换与 ENS](./address.md) — EIP-55 校验和（基于 keccak-256）
 - [Calldata 编解码](./calldata.md) — 编码 / 解码调用数据
 - [安全模型](../security.md)
