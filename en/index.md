@@ -31,6 +31,7 @@ or sent off your device.**
 | [EVM Wallet Generator](./evm/generate-wallet.md) | Generate EVM wallets locally; import mnemonic/key |
 | [Vanity Address](./evm/vanity.md) | Addresses with a chosen prefix/suffix |
 | [ABI Console](./evm/abi.md) | Import an ABI and call contracts visually |
+| [Hex Inspector](./evm/hex-inspect.md) | Paste any 0x string to see what it might be, with a link to the right tool |
 | [Signature Lookup](./evm/signature-lookup.md) | Function / event signature ⇄ 4-byte selector and 32-byte TopicID |
 | [Token Inspector](./evm/token-inspector.md) | Read an ERC-20's name / symbol / decimals / supply and flag suspicious fields |
 | [Unit Converter](./evm/unit-convert.md) | Wei / Gwei / Ether conversion |

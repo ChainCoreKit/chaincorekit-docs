@@ -23,6 +23,7 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [EVM 钱包生成](./evm/generate-wallet.md) | 本地批量生成 EVM 钱包，支持助记词/私钥导入 |
 | [靓号地址](./evm/vanity.md) | 生成带指定前后缀的地址 |
 | [ABI 可视化调用](./evm/abi.md) | 导入 ABI 图形化读写合约 |
+| [Hex 识别](./evm/hex-inspect.md) | 粘贴任意 0x 串，告诉你它可能是什么，并直达对应工具 |
 | [签名查询](./evm/signature-lookup.md) | 函数签名 / 事件签名 ⇄ 4 字节选择器与 32 字节 TopicID，双向互查 |
 | [Token 检查器](./evm/token-inspector.md) | 查看 ERC-20 的 name / symbol / decimals / 总量，并标出可疑字段 |
 | [单位换算](./evm/unit-convert.md) | Wei / Gwei / Ether 换算 |
