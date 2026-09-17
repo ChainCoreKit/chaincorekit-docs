@@ -26,7 +26,7 @@ ChainCore Kit 是一个浏览器端开发者工具箱，覆盖 **EVM、Bitcoin�
 
 | 分类 | 工具 |
 | --- | --- |
-| **EVM** | 测试币水龙头 · 生成钱包 · 靓号地址 · ABI 可视化调用 · 签名选择器查询 · 单位换算 · 交易分析 · 地址转换与 ENS · 事件主题 TopicID · Hash 工具 · Calldata 编解码 · Token 发行 |
+| **EVM** | 测试币水龙头 · 生成钱包 · 靓号地址 · ABI 可视化调用 · 签名查询 · Hex 识别 · Token 检查器 · 单位换算 · 交易分析 · 地址转换与 ENS · Hash 工具 · Calldata 编解码 · Token 发行 |
 | **Bitcoin** | 生成钱包 · 地址类型转换 · 余额批量查询 · UTXO 查询 · PSBT 解码 |
 | **NFT** | 预览 · 发行 |
 | **Solana** | 钱包生成 · PDA / ATA 计算 · Instruction 编解码 · Program IDL · Compute / Fee / Rent |

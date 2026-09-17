@@ -26,7 +26,7 @@ Full index: [English](./en/index.md) · [中文](./zh/index.md)
 
 | Category | Tools |
 | --- | --- |
-| **EVM** | Faucets · Generate Wallet · Vanity Address · ABI Console · Signature Lookup · Unit Converter · Transaction Tracer · Address & ENS · Signature Lookup · Hash Tools · Calldata Codec · Token Issuance |
+| **EVM** | Faucets · Generate Wallet · Vanity Address · ABI Console · Signature Lookup · Hex Inspector · Token Inspector · Unit Converter · Transaction Tracer · Address & ENS · Hash Tools · Calldata Codec · Token Issuance |
 | **Bitcoin** | Generate Wallet · Address Format Convert · Balance Checker · UTXO Lookup · PSBT Decode |
 | **NFT** | Preview · Issuance |
 | **Solana** | Generate Wallet · PDA / ATA · Instruction Codec · Program IDL · Compute / Fee / Rent |
