@@ -17,6 +17,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   security for key tools / related tools) and is grounded in the actual tool
   behavior. Not-yet-available app sub-features are marked "coming soon".
 - Documentation index now links every tool page in both languages.
+- ABI Console (EN + 中文): "Export / import the contract list" — the `···` menu
+  next to the contract list, the exported JSON shape, how the import preview
+  labels each entry (new / skip / overwrite / invalid), and the skip-vs-overwrite
+  policy for contracts you already have.
 
 ### Pending
 - Wiring the app's "Docs" links to this repository.

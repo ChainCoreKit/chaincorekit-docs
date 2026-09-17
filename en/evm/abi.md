@@ -32,6 +32,53 @@
 5. The top bar lets you **View ABI**, open the **block explorer**, **edit** the
    contract, or **share / delete** from the `···` menu.
 
+## Export / import the contract list
+
+Switch machines, switch browsers, or clear site data and that left-hand list is
+gone — you'd have to re-enter every contract by hand. You can carry the whole
+list instead.
+
+Below **Add contract** there is a `Contracts · N` row with a `···` menu:
+
+| Menu item | What it does |
+| --- | --- |
+| Import list | Pick a `.json` file, or paste the list straight in |
+| Export all · N | Save every contract into one JSON file |
+| Export current contract | Export only the contract selected on the left |
+
+The exported file is plain JSON and `abi` is an array (not a string), so scripts
+and other tooling can consume it directly:
+
+```json
+{
+  "format": "chaincorekit-abi-contracts",
+  "version": 1,
+  "exportedAt": "2026-09-16T08:30:00.000Z",
+  "count": 1,
+  "contracts": [
+    {
+      "name": "USDC",
+      "network": "Ethereum",
+      "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "abi": [{ "type": "function", "name": "balanceOf", "stateMutability": "view", "inputs": [], "outputs": [] }]
+    }
+  ]
+}
+```
+
+Importing **previews first, writes second**: every entry is labelled with what
+will happen to it, and each one can be ticked or unticked.
+
+| Label | Meaning |
+| --- | --- |
+| New | Not in your list yet — it will be added |
+| Will skip / Will overwrite | You already have this contract (**same address on the same network**); which one depends on the policy below |
+| Invalid | It can't come in, and the row says why: invalid contract address / network missing / ABI is not a JSON array / duplicate within the list |
+
+For **Existing contracts** pick **Skip** (default) or **Overwrite**. When the
+import finishes you're told how many were imported, overwritten, skipped and
+invalid.
+
 ## Inputs / outputs
 
 | Field | Meaning / format |
@@ -42,6 +89,7 @@
 | ABI source | paste ABI JSON array / upload file |
 | Unit switch | Wei / Gwei / Ether, aids amount inputs only |
 | Function group | All / Read (view) / Write |
+| Contract list file | JSON with name / network / address / ABI; both an exported file and a bare array are accepted |
 
 ## Notes & gotchas
 
@@ -58,6 +106,14 @@
   4-arg) each get their own card. Expanding, filling and sending one never
   affects the other — the transaction is encoded for the overload whose card you
   opened.
+- **An exported list holds only contract names, networks, addresses and ABIs** —
+  all public information, no private keys, mnemonics or credentials. It still
+  reveals which contracts and chains you work with, so think before sharing it.
+- **Overwriting can't be undone**: the local entry's name and ABI are replaced by
+  the ones in the list. Export a copy first if you're unsure.
+- The contract list lives in your own browser and is **never synced to a server**
+  — which is why moving devices needs export / import, and why clearing site data
+  clears the list too.
 - High-risk writes get an inline warning when expanded and an extra tick-box
   before sending: `transferOwnership`, `renounceOwnership`, `selfdestruct`,
   `upgrade`, and **`setApprovalForAll`** — the last one hands over every token in
