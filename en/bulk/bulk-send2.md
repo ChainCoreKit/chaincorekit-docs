@@ -48,6 +48,36 @@
 | List | one "address,amount" per line, comma / space separated |
 | Output | per-row status, retry failures, exportable results |
 
+## Retrying failed rows: the chain is checked first
+
+**"Failed" means two very different things.** Either the transfer never went out
+(rejected in the wallet, not enough balance, gas estimation failed), or it **was
+broadcast and simply never got a receipt** — common when the network is busy.
+Blindly resending the second kind pays the same recipient twice, and there is no
+undo on-chain.
+
+So retrying first **asks the chain about every row** before deciding. You will see:
+
+- **A "triaging 3/12" progress line** — these are sequential lookups, so a long list
+  takes a moment; a stop button sits next to it.
+- **Some rows are deliberately not resent**:
+  - already confirmed on-chain → the row is corrected back to success, nothing is sent;
+  - still in flight (the node has it, not yet mined) → skipped; check back shortly;
+  - dropped by the node (usually gas priced too low) → unlocked and the hash cleared,
+    so **clicking retry once more** actually resends it;
+  - status unknown (node throttling / network error) → no verdict, no resend; try a
+    different endpoint later.
+
+Two more cases are held back:
+
+- **A transaction you cancelled or replaced in the wallet counts as failed.** The
+  "cancel" your wallet sends is itself a transaction that succeeds on-chain, so its
+  success does not mean the transfer happened — the money never moved.
+- **Retrying after switching networks is blocked**, with a prompt to switch back. A
+  transaction's identity includes its chain: a row that failed on chain A becomes a
+  brand-new payment — in a different coin — if resent on chain B. Switch back and
+  retry as usual.
+
 ## Notes & gotchas
 
 - **Sender needs native coin for gas**: sending ERC-20 still costs native coin for
