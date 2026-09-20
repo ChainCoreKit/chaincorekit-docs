@@ -73,10 +73,10 @@ Two more cases are held back:
 - **A transaction you cancelled or replaced in the wallet counts as failed.** The
   "cancel" your wallet sends is itself a transaction that succeeds on-chain, so its
   success does not mean the transfer happened — the money never moved.
-- **Retrying after switching networks is blocked**, with a prompt to switch back. A
-  transaction's identity includes its chain: a row that failed on chain A becomes a
-  brand-new payment — in a different coin — if resent on chain B. Switch back and
-  retry as usual.
+- **Retrying after changing the network, sending wallet or asset is blocked**, with a
+  prompt to restore it. A transfer's identity is all three together: a row that failed
+  on chain A becomes a brand-new payment — in a different coin — if resent on chain B,
+  and a different sending wallet quietly pays from another address. Restore and retry.
 
 ## Notes & gotchas
 
