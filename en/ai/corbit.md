@@ -49,6 +49,9 @@ See [endpoint CORS setup](./corbit-cors.md) for details.
 - **It will get things wrong.** Verify addresses, amounts and networks yourself before any on-chain action — never sign straight from an AI answer.
 - **Never paste a private key or mnemonic into it.** That would send them to your endpoint (and possibly the relay) along with the conversation. There is never a reason to do this.
 - Conversations are not persisted; refreshing the page clears them.
+- **Ticking "Remember key" stores it in plain text in this browser**: browser extensions that can read this site's storage, or anyone else using the computer, could get it. Only tick it on a personal device, and clear it in settings when you're done.
+- **Messages containing keys or mnemonics are not saved to chat history**: besides EVM keys and mnemonics, this covers BTC WIF keys, extended private keys (xprv and friends), Solana secret keys and keypair arrays, and Polkadot seeds. Such a message simply won't be there after a reload.
+- **Images in replies are shown as text**: they're never loaded, so a link to an external image can't carry your conversation out.
 
 ## Related
 

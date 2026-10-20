@@ -83,6 +83,8 @@
 - **Amount precision**: ERC-20 amounts are scaled by the token's `decimals`.
 - **Native coins differ per chain**: Ethereum/Arbitrum/Base/Optimism = ETH,
   BNB Chain = BNB, Polygon = POL, Avalanche = AVAX, Sepolia = SepoliaETH.
+- **Tokens like USDT need the allowance reset to 0 first**: they won't change a non-zero allowance straight to another non-zero value. The tool simulates the change first; when a reset is really needed, the button becomes "① Reset approval to 0", and after it confirms you approve the new total. It's one extra signature, but the only way forward. Standard tokens are unaffected.
+- **If you deploy your own Disperse contract, use the source shown on the page**: since October 2026 it's v2 — it refunds only the unspent part of what you sent and rejects re-entry from recipient contracts. With the older v1, if your recipients included an untrusted contract, the last one could take your change during its callback. Already-deployed v1 contracts are still recognised, and they're fine when all recipients are ordinary addresses.
 
 ## Related tools
 

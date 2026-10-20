@@ -37,6 +37,8 @@
   are missing.
 - The decode is for verification only — trust your own signing wallet's display as
   the final word.
+- **Check the Sighash column**: a normal payment only ever uses `ALL` (or `DEFAULT` for Taproot). `NONE`, `SINGLE`, or anything with `ANYONECANPAY` means the signature covers only part of the transaction — whoever holds it can change the uncovered outputs or add inputs. The tool shows a red warning above the inputs table; ask what it's for before you sign.
+- **Inputs marked "Self-reported"**: the amount comes from the PSBT's own witnessUtxo and can't be checked locally. Inputs that carry the full previous transaction are checked against their txid; if they don't match, the tool tells you the PSBT has been tampered with and not to sign it.
 
 ## Related tools
 

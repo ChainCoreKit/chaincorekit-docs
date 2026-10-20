@@ -119,6 +119,7 @@ invalid.
   `upgrade`, and **`setApprovalForAll`** — the last one hands over every token in
   an NFT collection in a single call, after which the operator can move them at
   any time without you seeing another confirmation.
+- **These functions need an extra confirmation tick before sending**: `transferOwnership`, `renounceOwnership`, upgrade functions (names containing upgrade), `selfdestruct`, `setApprovalForAll`, and the permission functions `grantRole`, `changeAdmin` and `setOwner`. A single call to any of them can hand over control of the contract or your assets. A plain `approve` is not on the list.
 
 ## Related tools
 

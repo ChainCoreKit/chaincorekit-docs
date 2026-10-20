@@ -25,10 +25,19 @@ mnemonic happens inside your browser.
 
 ## Risk of exporting files with keys
 
-- Exporting a "table with private keys" writes a **plaintext** file of keys and
-  mnemonics.
-- Anyone who obtains that file gains **full control** of those wallets.
-- Do it only in a safe environment, store it carefully, and delete it promptly.
+- Exporting a "table with private keys" is **encrypted by default**: you set a password (at least 8 characters) and get a `.ccbackup.json` file. The key is derived from your password with scrypt and the content is encrypted with AES-256-GCM. The format is public, so standard tools can decrypt it outside this site too.
+- To restore, click "Decrypt backup" on any wallet page, pick the file and enter the password to download the original table. **If you lose the password, the file can't be opened** — and we can't help.
+- You can still choose a plaintext export: anyone who obtains that file gains **full control** of those wallets. Do it only in a safe environment, store it carefully, and delete it promptly.
+
+## Clipboard
+
+- After you copy a key or mnemonic, the clipboard is **cleared automatically after 45 seconds** (the toast says so). Clipboard history, clipboard managers and cross-device sync can all read it, so it shouldn't linger once you've pasted.
+- If you copy something else on this site in the meantime, nothing is cleared — your newer copy is left alone.
+- Browsers don't allow clipboard writes while the page is in the background, so the clear waits until you come back.
+
+## Custom RPCs and API keys
+
+- RPC URLs that contain an API key (Infura, Alchemy, QuickNode and the like, or `?apikey=` / `user:pass@`) are **not saved locally** — enter them again after a reload. Public endpoints without a key are remembered as usual.
 
 ## Safe flow for write operations
 
@@ -39,8 +48,9 @@ fixed flow — no step is skipped:
 
 - When no wallet is connected, write buttons read "Connect wallet to continue"
   and never fire silently.
-- High-risk actions (`transferOwnership`, `selfdestruct`, upgrades) require an
-  extra confirmation.
+- High-risk actions require an extra confirmation: `transferOwnership`,
+  `renounceOwnership`, `selfdestruct`, upgrades, `setApprovalForAll`, and the
+  permission functions `grantRole`, `changeAdmin` and `setOwner`.
 - Before signing, verify the three essentials: **address, amount, network**.
 
 ## Vanity addresses: the 2022 Profanity incident
@@ -52,6 +62,11 @@ If your vanity address (for example one starting with `0x0000…`) was generated
 - What matters is **which tool generated it and when** — not how the address looks. The same prefix produced by a sound generator carries no such weakness.
 
 ChainCore Kit's vanity search and wallet generation always draw a full 256 bits of entropy from the browser's cryptographically secure random source (`crypto.getRandomValues`), with no truncation. In environments where that source is unavailable, generation is refused outright rather than falling back to weak randomness.
+
+## How the site protects itself
+
+- This site refuses to be embedded in other pages (clickjacking protection: nobody can wrap it in an invisible frame to trick you into clicking), and pages may only load scripts from the site itself.
+- If a tool has a problem, the maintainers can take it offline temporarily or post a notice at the top of the page without redeploying. If you see "This tool is temporarily offline for maintenance", come back later — transactions you've already signed and sent are unaffected.
 
 ## Recommendations
 

@@ -95,6 +95,7 @@
   `transferOwnership`、`renounceOwnership`、`selfdestruct`、`upgrade`，
   以及 **`setApprovalForAll`** —— 后者一次就把某个 NFT 合集的全部处置权交给对方，
   之后对方随时可以转走，而你不会再收到任何交易确认。
+- **这些函数发送前要额外勾选确认**：`transferOwnership`、`renounceOwnership`、合约升级类（名字含 upgrade）、`selfdestruct`、`setApprovalForAll`，以及权限类的 `grantRole`、`changeAdmin`、`setOwner`。它们一次调用就能交出合约或资产的控制权。普通的 `approve` 不在其中。
 
 ## 相关工具
 

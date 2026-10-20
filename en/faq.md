@@ -55,6 +55,14 @@ Results distinguish success from failure and show the revert reason on failure.
 Common causes: insufficient gas or balance, invalid parameters, or a missing
 `approve`. Fix and retry.
 
+## There's a notice at the top, or a tool says it's "temporarily offline"?
+
+That's an emergency measure while the maintainers look into a problem: a tool can be taken offline, or a notice posted, without redeploying. Please come back later; transactions you've already signed and sent are unaffected.
+
+## A tool page crashed — how do I report it?
+
+The error page has a "Copy error details" button. It copies the first line of the error, the build version, the page path and your browser info — paste that into your report. Long strings such as keys and mnemonics are stripped before copying. The build version is also shown at the bottom of the sidebar.
+
 ## Is the documentation or the code public?
 
 **This documentation repository** is openly licensed (CC BY 4.0 + MIT for code

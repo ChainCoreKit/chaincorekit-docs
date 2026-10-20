@@ -50,6 +50,7 @@
   `decimals`, the amount is labelled "decimals unknown — raw units" and shown
   unconverted. That figure is a smallest-unit count, **not a human-readable
   amount** — retrying with another RPC endpoint usually resolves it.
+- **Custom RPC URLs with an API key are not remembered**: URLs from providers such as Alchemy or QuickNode carry your key, so they're used for this session only — enter them again after a reload.
 
 ## Related tools
 

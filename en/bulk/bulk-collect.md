@@ -78,6 +78,14 @@ Two more cases are held back:
   chain A becomes a brand-new sweep — of a different coin — if resent on chain B, and a
   changed destination simply sends the funds to someone else. Restore and retry as usual.
 
+## Safeguards while sending
+
+- **Gas price cap** (optional, in Gwei): if the node quotes more than the cap, sending stops and the remaining rows stay unsent. Leave it empty for no cap.
+- **Stops on a price spike**: if the gas price rises more than 50% above what you saw in the confirmation dialog, sending stops and asks you to confirm again, instead of carrying on at the new price.
+- **Sends in nonce order and stops at a gap**: if one transaction from a wallet fails to go out, the later ones from that wallet are held back — otherwise they would sit stuck behind the missing nonce. Fix the cause, then resend the held rows together.
+- **Custom RPCs are cross-checked**: the tool compares the node's block data with a public node for the same chain. If they disagree (the node is probably not the chain it claims to be), sending is blocked. Decimals of well-known tokens are also checked against known values, and a wrong answer blocks sending too. If the check can't run right now, you only get a warning.
+- **RPC URLs that contain an API key are not remembered**: URLs from providers such as Infura or Alchemy carry your key, so they're used for this session only and you'll need to enter them again after a reload.
+
 ## Notes & gotchas
 
 - **Gas reserve**: sweeping the native coin reserves gas per wallet, so "send all"
@@ -103,6 +111,7 @@ Two more cases are held back:
 - Keys are used for this signing session only, never written to localStorage, and
   cleared from memory on close.
 - Before a large run, validate the flow with 1–2 wallets and a small amount.
+- Sweeping a single wallet from its row also opens a confirmation dialog — check the source and destination addresses before signing.
 
 ## Related tools
 

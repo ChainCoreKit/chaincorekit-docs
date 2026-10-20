@@ -72,6 +72,7 @@ The four outcomes mean different things:
   completely different digest — `中文消息` is 4 characters but 12 bytes.
 - **Dependency ordering matters**: in `encodeType` the primary type comes first and the
   remaining dependencies are sorted alphabetically. Get the order wrong and `typeHash` is wrong.
+- **"Match" doesn't guarantee a contract will accept it**: if the signature uses a high-s value, or v isn't 27 / 28 (for example 0 / 1), the signer still recovers here, but on-chain verifiers such as OpenZeppelin ECDSA and `ecrecover` reject it. The tool tells you which one applies under the result.
 
 ## Related tools
 

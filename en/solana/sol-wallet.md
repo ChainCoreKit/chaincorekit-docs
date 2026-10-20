@@ -68,10 +68,10 @@ The derivation path is `m/44'/501'/i'/0'` (all hardened, the Phantom convention)
 
 - Keys/mnemonics are masked; click the eye icon to reveal, only in a **safe
   environment**.
-- **Exporting a table with keys** writes a plaintext file — anyone who gets it
-  fully controls those wallets. Store and delete it carefully.
 - Sensitive data is never written to localStorage and is cleared from memory on
   close.
+- **Exports are encrypted by default**: exporting a table with keys or mnemonics asks for a password and produces an encrypted `.ccbackup.json` file. Use the "Decrypt backup" button on any wallet page and enter the password to get the table back. You can still choose a plaintext export — anyone who gets that file fully controls these wallets, so store it carefully and delete it when you're done.
+- **The clipboard is cleared 45 seconds after you copy a key or mnemonic**: if you copy something else on this site in the meantime, it won't be cleared.
 
 ## Related tools
 
