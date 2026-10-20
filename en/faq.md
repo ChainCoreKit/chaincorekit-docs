@@ -42,6 +42,13 @@ On the EVM side: Ethereum, Arbitrum, Base, Optimism, BNB Chain, Polygon,
 Avalanche, and the Sepolia testnet, among others — plus dedicated Bitcoin, Solana,
 and Polkadot tools. Block-explorer links map automatically per network.
 
+## What happens if I switch networks in my wallet before signing?
+
+Nothing is sent. Every write checks the chain your wallet is on right before signing;
+if it no longer matches the network you confirmed, the transaction is cancelled and
+the page asks you to switch back — the same address can be a completely different
+contract on another chain, or have no code at all. Batch transfers stop the remaining rows.
+
 ## A transaction failed — now what?
 
 Results distinguish success from failure and show the revert reason on failure.

@@ -2,8 +2,8 @@
 
 # NFT Issuance
 
-> Deploy a standard ERC-721 contract, set a Base URI, and mint NFTs to a chosen
-> address.
+> Deploy a standard ERC-721 whose source you can read and verify on Sourcify, set a
+> Base URI, and mint NFTs to a chosen address.
 
 ## When to use it
 
@@ -18,13 +18,16 @@
 1. Connect your wallet (top right). While disconnected, write actions show
    **"🔒 Connect wallet to continue"** — clicking opens the connect dialog.
 2. In the **Contract** card, pick a mode:
-   - **Deploy new contract**: enter **Name** and **Symbol**, choose the
-     **network** (Ethereum / Polygon / Arbitrum One / Base / Sepolia). The
-     **pre-flight** panel shows contract type, deploy network, wallet's current
-     network, estimated fee, and whether the balance is sufficient. Click
+   - **Deploy new contract**: enter **Name** and **Symbol**; if your metadata
+     files are named with `.json` (e.g. `0.json`), check **Metadata file names
+     end in .json**. The deploy network follows the chain your wallet is on. The
+     **pre-flight** panel shows contract type, **owner privileges**, deploy
+     network, estimated fee, and whether the balance is sufficient; **View
+     contract source** shows the full contract and build settings. Click
      **Deploy** to open the confirmation dialog; after verifying, **confirm and
      deploy** — the dialog shows pending → success (contract address + tx hash)
-     or failure (reason).
+     or failure (reason). On success, click **Verify source on Sourcify** (the
+     contract info card has the same button).
    - **Import existing contract**: choose the network, enter the **contract
      address**, and click **Import**.
 3. After deploy or import, the **Contract info** card shows the address, name,
@@ -43,7 +46,8 @@
 | Field | Meaning / format |
 | --- | --- |
 | Name / Symbol | the ERC-721 Name / Symbol |
-| Network | Ethereum / Polygon / Arbitrum One / Base / Sepolia |
+| Metadata file names end in .json | decides the tokenURI: `Base URI + tokenId` or `Base URI + tokenId + .json`; **can't be changed after deployment** |
+| Network | follows the chain your wallet is on |
 | Contract address (import) | `0x…`, an already-deployed ERC-721 |
 | Base Token URI | `ipfs://…/` or `https://…/metadata/` |
 | Recipient | `0x…`, the address receiving the NFT |
@@ -57,8 +61,24 @@
   data.
 - **Network consistency**: before deploy / mint, confirm the "deploy network"
   matches the "wallet's current network" to avoid the wrong chain.
-- **tokenURI concatenation depends on the contract**: commonly Base URI + tokenId
-  or Base URI + tokenId.json — make sure metadata is uploaded to that path.
+- **The page tells you how tokenURI is built for this contract**:
+  - Contracts deployed here: `Base URI + tokenId`, or `Base URI + tokenId + .json`
+    if you checked the option; token ids start at 0.
+  - Contracts from this tool's **previous template**: every NFT's tokenURI is
+    `Base URI + metadata.json`, so **they all share one metadata file**. The page
+    says so when you import one.
+  - Other contracts: whatever that contract implements — commonly
+    `Base URI + tokenId`, sometimes with `.json`.
+- **Owner privileges**: the deploying wallet becomes owner — it can mint, change the
+  Base URI at any time (i.e. every NFT's metadata), and transfer or renounce
+  ownership. There is **no pause**: the owner can't freeze holders' transfers.
+- **Switching networks before you sign is blocked**: if you change chains after
+  confirming but before signing, nothing is sent and the page asks you to switch back.
+- **Verifying sends the source to Sourcify** (a public source-verification service;
+  results are visible to everyone). Etherscan is verified separately: download the
+  Standard JSON and submit it on Etherscan's "Verify & Publish" page as *Standard
+  JSON Input*. Contracts from the previous template have no published source and
+  can't be verified.
 - **Don't drop the trailing slash** — the most common mistake at this step. Entering
   `ipfs://Qm…` instead of `ipfs://Qm…/` concatenates to `ipfs://Qm…0` rather than
   `ipfs://Qm…/0`, so **every token's metadata fails to resolve**: blank images in

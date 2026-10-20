@@ -2,75 +2,98 @@
 
 # Token Issuance
 
-> Create and deploy a standard mintable ERC-20 — preflight gas and balance, confirm,
-> then sign. You can also import an existing contract to mint.
+> Deploy a standard ERC-20 whose source you can read and verify on Sourcify. Gas, balance and owner privileges are checked before you sign; you can also import an existing contract and mint.
 
 ## When to use it
 
-- You want to ship a standard ERC-20 quickly on a testnet / mainnet.
+- You want to launch a standard ERC-20 on a testnet or mainnet quickly.
+- You need a token contract whose **source can be checked on a block explorer / Sourcify**, so holders and partners can confirm there's no backdoor.
 - You already deployed an ERC-20 and want to import it and keep minting.
-- You want to see the estimated fee, network, and whether your balance is enough
-  before deploying.
 
 ## Steps
 
 ### Deploy a new contract
 
 1. **Connect a wallet** first (while disconnected the button shows "🔒 Connect
-   wallet"; clicking it opens the connect flow).
-2. On the **Deploy** tab, fill in **name / symbol / total supply / decimals** and
-   pick a **network**.
-3. Review the **deploy preflight**: contract type, initial supply, deploy network,
-   your wallet's current network, estimated fee, and balance check.
-4. Click **Deploy**, verify in the confirm dialog, then **Confirm & deploy**. A
-   dialog shows pending → success / failure; on success, copy the contract address
-   and tx hash and open the block explorer.
+   wallet"; clicking it opens the connect flow). The deploy network **follows the
+   chain your wallet is on** — switch networks in your wallet.
+2. On the **Deploy** tab, fill in **name / symbol / total supply**, and optionally a
+   **max supply** (leave empty for no cap).
+3. Review the **deploy preflight**: contract type, **owner privileges**, initial
+   supply, deploy network, estimated fee, and balance check.
+4. To see exactly what gets deployed, click **View contract source**: the full
+   contract and its build settings (OpenZeppelin version, solc version, optimizer
+   runs, EVM version) are shown.
+5. Click **Deploy**, verify in the confirm dialog, then **Confirm & deploy**. The
+   dialog shows pending → success / failure.
+6. After a successful deploy, click **Verify source on Sourcify**; the result
+   arrives within seconds to a minute, then **View on Sourcify**. The contract
+   info card has the same button, so you can verify any time after closing the dialog.
 
 ### Import an existing contract
 
-1. Pick a **network** and enter the **token contract address** on the **Import** tab.
-2. Click **Import** to interact as a standard ERC-20.
+1. On the **Import** tab, enter the **token contract address** and click **Import**
+   to interact as a standard ERC-20.
 
 ### Mint tokens
 
 - After deploying or importing, in the **Mint** card fill **recipient** ("Use my
-  address" available) and **amount**, review the estimated fee, and click **Mint**.
+  address" available) and **amount**, check the echoed parameters, and click **Mint**.
 
 ## Inputs / outputs
 
 | Field | Meaning / format |
 | --- | --- |
-| Name / Symbol | token name and symbol (e.g. ChainCore Token / CCK) |
-| Total supply | initial supply |
-| Decimals | decimal places; usually 18, stablecoins like USDC/USDT use 6 |
-| Network | Ethereum / Arbitrum One / Base / Polygon / Sepolia |
-| Deploy preflight | contract type, supply, network, estimated fee, balance check |
-| Contract info | after deploy/import: address, name, symbol, decimals, supply, network |
-| Mint | recipient + amount, with estimated fee |
+| Name / Symbol | token name and symbol (e.g. ChainCore Token / CCK); symbol is 1–12 letters or digits |
+| Total supply | in **whole tokens**, all minted to the deploying wallet |
+| Max supply (optional) | in whole tokens; empty = no cap. Can't be lower than the total supply and **can't be changed after deployment** |
+| Decimals | always 18 for contracts deployed here (read-only) |
+| Deploy preflight | contract type, owner privileges, supply, network, estimated fee, balance check |
+| Contract info | address, name, symbol, decimals, total supply, max supply, network |
+| Mint | recipient + amount; the echo also shows the converted base-unit value |
 | Transaction history | type / tx hash / status |
+
+## Owner privileges (read before deploying)
+
+- **The deploying wallet becomes owner**; only the owner can mint.
+- **Without a max supply, the owner can mint without limit.** With a cap, total
+  minting can never exceed it (burned tokens free up room to be minted again).
+- Any holder can burn their own tokens.
+- The owner can transfer or renounce ownership; **after renouncing, minting is
+  disabled forever**.
+
+All of this is stated in the preflight's "Owner privileges" row and can be checked
+line by line in the source.
 
 ## Notes & gotchas
 
 - **Two-level gating** — a write needs (1) a connected wallet and (2) a deployed /
   imported contract; missing either disables the button.
+- **Switching networks before you sign is blocked** — if you change chains in your
+  wallet after confirming but before signing, nothing is sent and the page asks
+  you to switch back. The same address can be a completely different contract on
+  another chain.
 - **Deploy / mint are real on-chain transactions** — they cost gas and are
   irreversible; verify network, supply, and account before confirming.
-- **Native fee coin by network** — Ethereum / Arbitrum One / Base = ETH, Polygon =
-  POL, Sepolia = SepoliaETH; the fee estimate follows the selected network.
-- **Decimals change what an amount means** — with `decimals=18` the chain accounts in
-  the smallest unit; don't read raw values as human-readable amounts.
-- **Verify before importing** — confirm the address and network, and check whether
-  the contract is verified on the explorer before any write.
-- **Three kinds of deploy failure, handled differently** — the result dialog names
-  which one it was:
-  - **Rejected in the wallet** — nothing was sent, no gas spent; fix and retry.
-  - **Send failed** (insufficient funds, RPC error…) — also never reached the
-    chain; act on the stated reason.
-  - **Reverted · constructor execution failed** — the transaction **did reach the
-    chain and did cost gas**, but the constructor reverted, so there is no code at
-    that address. A contract address in the receipt does not count; fix the
-    constructor arguments and deploy again.
-- High-risk writes ask for a second confirmation — read the dialog carefully.
+- **Minting needs the token's decimals first** — imported tokens may use 6, 8, etc.
+  If decimals can't be read, the Mint button is disabled with a **Retry** option:
+  minting with the wrong decimals mints a completely different amount, irreversibly.
+- **Verifying sends the source to Sourcify**, a public source-verification service;
+  the result is visible to everyone. Etherscan is verified separately: click
+  **Download Standard JSON** and submit it on Etherscan's "Verify & Publish" page
+  as *Standard JSON Input*.
+- **Contracts from the previous template can't be verified** — the earlier template
+  had no published source. Those contracts can still be imported and minted, but
+  not verified on Sourcify.
+- **Deploy failures come in three kinds** with different fixes; the result dialog
+  says which:
+  - **Rejected in the wallet** — nothing was sent and no gas was spent; adjust and retry;
+  - **Send failed** (insufficient balance, RPC error, …) — also never reached the
+    chain; fix the stated cause;
+  - **Deploy reverted · constructor failed** — the transaction **was mined and gas
+    was spent**, but there is no code at that address; fix the parameters and redeploy.
+- **Native coin by network** — Ethereum / Arbitrum One / Base / Optimism = ETH,
+  BNB Chain = BNB, Polygon = POL, Avalanche = AVAX, Sepolia = SepoliaETH.
 
 ## Related tools
 

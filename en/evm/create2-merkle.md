@@ -91,6 +91,16 @@ the same tree.
   exactly like a correct one. Verify with a couple of addresses on a testnet before going live.
 - **Column types must match the contract's `abi.encode` order**; one column more or fewer
   yields a different root.
+- **Invalid values are rejected with the row number — never silently "fixed"**: an
+  integer out of range for its type (e.g. `-1` for `uint256`), an over-long `bytesN`, a
+  `bool` that isn't `true / false / 1 / 0`, or `bytes` that isn't valid hex all raise an
+  error and no root is produced, in both encodings. Wrapping `-1` to 2²⁵⁶−1 would let that
+  address claim the contract's entire balance.
+- **Two identical rows are rejected**: claim contracts that track by index would let the
+  same allocation be claimed twice.
+- **The same address on several rows (different amounts) is flagged, not blocked**: a
+  contract that tracks claims by address pays out only one row; one that tracks by index
+  pays every row. Confirm which one you intend.
 - This tool only produces the root and proofs — it **does not create a claim contract**.
   Eligibility proof and actual distribution are two separate things.
 

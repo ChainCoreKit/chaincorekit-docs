@@ -82,6 +82,11 @@ Two more cases are held back:
 
 - **Gas reserve**: sweeping the native coin reserves gas per wallet, so "send all"
   actually sends "balance − reserved gas".
+- **OP Stack chains (Optimism, Base, …) also need an L1 data fee reserved**: on top of
+  L2 execution, these chains charge for publishing the transaction data to Ethereum,
+  and that fee isn't part of the gas limit. The page estimates it and reserves 2× (it's
+  usually dust); if the estimate fails it falls back to a conservative value and says
+  so. Without it, the node rejects the transaction for insufficient funds.
 - **Native vs token**: sweeping an ERC-20 doesn't spend the token on gas, but each
   source wallet still needs native coin for gas — otherwise that row fails.
 - **Double-check the destination**: sweeping is irreversible; a wrong address means

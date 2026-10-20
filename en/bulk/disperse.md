@@ -63,8 +63,23 @@
 - **Transaction links follow the chain the transaction is on**: if you switch networks
   in your wallet after dispersing, the hash in the results still links to the block
   explorer for the chain the transaction actually landed on, not the one you switched to.
-- **Verify the Disperse contract**: check it on the block explorer before writing,
-  confirming it's the trusted distributor contract.
+- **The contract check has four outcomes, each handled differently**:
+  - **Contract deployed** — the address holds the canonical Disperse, or a build of
+    this page's "Deploy in Remix" source; you can disperse right away.
+  - **No contract** — nothing is deployed at this address on the current network,
+    so dispersing is disabled (sending to a codeless address loses all funds). Deploy
+    one via Remix as prompted and enter it as the custom contract address.
+  - **Unrecognized contract** — there is a contract, but not a known Disperse
+    implementation. If it has a payable fallback it will keep the funds and no
+    recipient gets paid. Check its source on a block explorer, confirm it's the
+    Disperse contract you deployed, then tick the confirmation; it only applies to
+    this address on this network — switching either requires confirming again.
+  - **Check failed** — the RPC request errored, which **doesn't mean the contract is
+    missing**. Dispersing pauses; check your connection and click "Check again"
+    instead of redeploying.
+- **Switching networks while the confirm dialog is open closes it** with "Network
+  changed — this run was aborted". The network, contract and allowance shown there
+  only hold for the chain it was opened on; start again on the new network.
 - **Amount precision**: ERC-20 amounts are scaled by the token's `decimals`.
 - **Native coins differ per chain**: Ethereum/Arbitrum/Base/Optimism = ETH,
   BNB Chain = BNB, Polygon = POL, Avalanche = AVAX, Sepolia = SepoliaETH.
