@@ -28,7 +28,8 @@ Corbit ships **no model and no quota of its own** — it's a client, and usage b
 
 ## Where your key lives
 
-- **Only in your own browser** (localStorage). Never uploaded, never synced.
+- **In memory by default**: closing or reloading the page means entering it again.
+- Only if you tick "Remember key" is it saved to this browser's local storage (in plain text). Never uploaded, never synced; clear it any time with "Clear key" in settings.
 - Requests go **straight from your browser to the endpoint you configured** — no server of this project is involved.
 - Switching devices means entering it again. That's deliberate: keys are not synced across devices.
 
@@ -48,7 +49,7 @@ See [endpoint CORS setup](./corbit-cors.md) for details.
 
 - **It will get things wrong.** Verify addresses, amounts and networks yourself before any on-chain action — never sign straight from an AI answer.
 - **Never paste a private key or mnemonic into it.** That would send them to your endpoint (and possibly the relay) along with the conversation. There is never a reason to do this.
-- Conversations are not persisted; refreshing the page clears them.
+- **Chat history is kept locally in this browser** (the latest 50 messages), so it survives a reload. It is never uploaded to any server. Use "Clear chat history" in settings to delete it. Messages that look like keys or mnemonics are not saved (see below).
 - **Ticking "Remember key" stores it in plain text in this browser**: browser extensions that can read this site's storage, or anyone else using the computer, could get it. Only tick it on a personal device, and clear it in settings when you're done.
 - **Messages containing keys or mnemonics are not saved to chat history**: besides EVM keys and mnemonics, this covers BTC WIF keys, extended private keys (xprv and friends), Solana secret keys and keypair arrays, and Polkadot seeds. Such a message simply won't be there after a reload.
 - **Images in replies are shown as text**: they're never loaded, so a link to an external image can't carry your conversation out.
