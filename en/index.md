@@ -35,6 +35,8 @@ or sent off your device.**
 | [Signature Lookup](./evm/signature-lookup.md) | Function / event signature ⇄ 4-byte selector and 32-byte TopicID |
 | [Token Inspector](./evm/token-inspector.md) | Read an ERC-20's name / symbol / decimals / supply and flag suspicious fields |
 | [Unit Converter](./evm/unit-convert.md) | Wei / Gwei / Ether conversion |
+| [Timestamp Converter](./evm/timestamp.md) | Unix timestamps to dates and back, seconds or milliseconds auto-detected |
+| [EVM Constants](./evm/constants.md) | Zero address, uint256 limits, well-known contract addresses and more |
 | [Transaction Tracer](./evm/trace-view.md) | Inspect a transaction's flow, events and calls |
 | [Address & ENS](./evm/address.md) | EIP-55 checksum, ENS resolution |
 | [Hash Tools](./evm/hash-tool.md) | keccak-256 and related hashing |

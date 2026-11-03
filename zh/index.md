@@ -27,6 +27,8 @@ ChainCore Kit 是一个浏览器端的多链开发者工具箱，覆盖 **EVM、
 | [签名查询](./evm/signature-lookup.md) | 函数签名 / 事件签名 ⇄ 4 字节选择器与 32 字节 TopicID，双向互查 |
 | [Token 检查器](./evm/token-inspector.md) | 查看 ERC-20 的 name / symbol / decimals / 总量，并标出可疑字段 |
 | [单位换算](./evm/unit-convert.md) | Wei / Gwei / Ether 换算 |
+| [时间戳换算](./evm/timestamp.md) | Unix 时间戳与日期互转，秒 / 毫秒自动识别 |
+| [常用常量](./evm/constants.md) | 零地址、uint256 上限、多链同址合约等，一键复制 |
 | [交易分析](./evm/trace-view.md) | 解析交易的资金流、事件与调用 |
 | [地址转换与 ENS](./evm/address.md) | EIP-55 校验、ENS 解析 |
 | [Hash 工具](./evm/hash-tool.md) | keccak-256 等哈希计算 |
