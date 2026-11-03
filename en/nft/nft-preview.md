@@ -15,8 +15,8 @@
 ## Steps
 
 1. Choose the **network**: Ethereum / Polygon / Arbitrum One / Base.
-2. Choose the **IPFS gateway**: ipfs.io / Pinata / dweb.link (used to load
-   `ipfs://` resources).
+2. Choose the **IPFS gateway**: ipfs.io / Pinata / dweb.link (tried first for
+   `ipfs://` resources; the others are used automatically if it can't fetch them).
 3. Enter the **contract address** (`0x…`, validated live against EIP-55).
 4. Enter the **Token ID** (e.g. 3749).
 5. Click **Preview** to read `tokenURI` on-chain and render the media and
@@ -39,8 +39,13 @@
 - **Read-only tool**: preview sends no transaction and needs no wallet — safe and
   side-effect free.
 - **ERC-721 is supported** for metadata preview; ERC-1155 is coming soon.
-- **Gateway differences**: if one IPFS gateway is slow or times out, switch to
-  another and retry.
+- **Automatic gateway fallback**: if the selected gateway can't fetch the file
+  (timeout, rate limit, or the browser reports it as a CORS block), the other
+  gateways are tried in turn, and the result says which one was used. Images
+  work the same way.
+- **When every gateway fails**: the result lists what happened at each one.
+  Usually the file isn't hosted by any IPFS node, or the gateways are all
+  rate-limited; the on-chain data is still accurate, so try again later.
 - **Missing metadata**: if the contract has no `tokenURI` or the path is empty,
   the media won't render — check the Base URI and where metadata was uploaded.
 - **Match the network**: the contract address must match the selected network,
